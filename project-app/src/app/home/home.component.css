@@ -1,27 +1,13 @@
-main {
-    display: block;
-    height: 100%;
-}
 .imageHome {
-  background-image: url('../../assets/healthy-grocery-list-13-pantry-essentials_ft-1024x683.jpg.jpg');
-  height:100%;
-  position: relative;
-  text-align: center;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-  /* width:100%;  */
+  background-image: url("../../assets/fresh-vegetables-fruits-and-nuts-royalty-free-image-943001868-1550249117.jpg");
+  background-color: fit-content;
 }
 a {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    /* transform: translate(-50%, -50%); */
-    text-align: center;
-    text-size-adjust: 50%;
-    font-size: 60px;
-    font-style: italic;
-    color:azure;
+  color: azure;
+  font-size: 90px;
+  font-family: sans-serif;
+  font-style: italic;
+}
+a:hover {
+    color: rgb(83, 125, 188);
 }
