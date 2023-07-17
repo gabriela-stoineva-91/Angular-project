@@ -1,37 +1,29 @@
- <header>
-  <nav>
-    <div id="navigation">
-      <div id="nav">
-        <span class="logo">
-          <a routerLink="/welcome">
-            <img
-              src="../../assets/logo.png"
-              alt="png"
-              height="90"
-              width="160"
-            />
-          </a>
-        </span>
+<header>
+  <span>
+    <a routerLink="/welcome">
+      <img
+        class="logo"
+        src="../../assets/logo.png"
+        alt="foodideas.png"
+        height="90"
+        width="160"
+      />
+    </a>
+    <nav id="nav">
+      <h1>
+        <a routerLink="/welcome">Welcome</a>
+      </h1>
 
-        <!-- Navigation -->
-        <h1><a routerLink="/welcome">Welcome</a></h1>
-
-        <a routerLink="/recipes">Recipes</a>
-
-        <!-- Logged-in users -->
-         <div id="user">
-          <a routerLink="/recipes">My Recipes</a>
-          <a routerLink="/create">Create Recipe</a>
-          <a routerLink="/sing-out">Sing out</a>
-        </div> 
-
-        <!-- Guest users -->
-         <div id="guest">
-          <a routerLink="/sing-in">Sing in</a>
-          <a routerLink="/sing-up">Sing up</a>
-        </div>
+      <a routerLink="/recipes">Recipes</a>
+      <div id="user">
+        <a routerLink="/recipes">My Recipes</a>
+        <a routerLink="/create">Create Recipe</a>
+        <a routerLink="/sing-out">Sing out</a>
       </div>
-    </div>
-  </nav>
+      <div id="guest">
+        <a routerLink="/sing-in">Sing in</a>
+        <a routerLink="/sing-up">Sing up</a>
+      </div>
+    </nav>
+  </span>
 </header>
-

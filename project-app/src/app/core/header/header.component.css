@@ -1,45 +1,86 @@
-
-.logo { 
-  float: left;
+.logo:hover {
+  border: 5px solid #99a4a9;
 }
-
-body {
-    color: blue;
-    background: #E9CBCB;
-    margin: 0;
-    padding: 0;
+.logo {
+  float: inline-end;
+  image-rendering: 60px;
+  image-resolution: 1080px;
 }
-
-header {
-    display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
-    padding: 0.5em 5em;
-    background: #DDDDDD;
+span {
+  display: block;
+  justify-content: space-between;
+  border: 1px solid black;
+  background-color: lightblue;
+  padding-top: 30px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
 }
-
-.home {
-    margin: 0;
-}
-
 nav {
-    display: flex;
-    /* justify-content: space-evenly;   */
+  display: inline;
+  float: right;
 }
-
+div {
+  display: inline;
+}
 nav a {
-    color: rgb(44, 96, 169);
-    font-size: 1.10rem;
-    font-style: bold;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: 150; 
-    text-shadow: 1px 1px #99a4a9; 
+  padding-right: 20px;
+  display: inline;
+  font-size: 30px;
+  font-style: oblique;
+  font-family: "Lucida Sans";
+  text-shadow: 2px 2px #99a4a9;
+  text-align: justify;
+  text-underline-position: above;
+  text-decoration: dashed;
 }
-nav a:hover {
-    color: aliceblue;
+h1 {
+  display: inline;
+}
+img {
+  display: inline;
 }
 
-header a {
-    padding: 0 30px;
-    text-decoration: none;
+/* justify-content: space-between;
+    padding: 1rem 2rem;
+    list-style: none; 
+    font-style: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 150;
+  text-shadow: 1px 1px #99a4a9; */
+/* background: #cfd8dc; /* 4 */
+/* display: flex;
+    justify-content: space-evenly; */
+
+/* body {
+  color: blue;
+  background: #e9cbcb;
+  margin: 0;
+  padding: 0;
+}  */
+/* 
+header {
+  /* justify-content: space-between; */
+/* padding: 0.5em 5em;
+  background: #dddddd; */
+/*   
+  justify-content: space-between; */
+/* 
+
+
+    /* a {
+        display: inline;
+        /* padding: 8px; */
+/* background-color: #dddddd; */
+
+/* display: flex;
+  padding-left: 1rem;
+
+  color: rgb(44, 96, 169);
+  /* float: left; */
+/* font-size: 1.1rem;
+   */
+nav a:hover {
+  color: aliceblue;
+  font-size: 35px;
 }
