@@ -1,43 +1,45 @@
-<section id="create">
+<section>
     <div class="form">
-      <h2>Add Event</h2>
+      <h2>Add Your Cooking Idea</h2>
       <form class="create-form">
         <input
           type="text"
           name="name"
-          id="name"
-          placeholder="Event"
+          placeholder="Recipe's name ...."
         />
         <input
           type="text"
           name="imageUrl"
-          id="event-image"
-          placeholder="Event Image URL"
+          placeholder="Nice picture here ...."
         />
         <input
           type="text"
           name="category"
-          id="event-category"
-          placeholder="Category"
+          placeholder="Breakfast, Lunch or Dinner"
         />
 
 
         <textarea
-          id="event-description"
-          name="description"
-          placeholder="Description"
-          rows="5"
+          name="products"
+          placeholder="Needed products ...."
+          rows="10"
           cols="50"
         ></textarea>
+        <textarea
+        name="preparation"
+        placeholder="Cooking steps ...."
+        rows="10"
+        cols="50"
+      ></textarea>
+      
         
         <input
         type="text"
-        name="date"
-        id="date"
-        placeholder="When?"
+        name="time"
+        placeholder="Needed time in minutes ...."
       />
 
-        <button type="submit">Add</button>
+        <button type="submit">Done</button>
       </form>
     </div>
   </section>
