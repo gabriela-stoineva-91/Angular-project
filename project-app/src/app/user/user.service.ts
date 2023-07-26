@@ -22,6 +22,7 @@ export class UserService {
     //   this.user = undefined;
     // }
   }
+  
 
   singIn(): void {
     // this.user = {
@@ -29,9 +30,17 @@ export class UserService {
 
     // localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
   }
+  singUp(): void {
+    // this.user = {
+    // };
+  
+    // localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
+  }
+
 
   singOut(): void {
     // this.user = undefined;
     // localStorage.removeItem(this.USER_KEY);
   }
 }
+
