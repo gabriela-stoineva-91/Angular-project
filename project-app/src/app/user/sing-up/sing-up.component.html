@@ -1,29 +1,43 @@
 <section>
-    <div class="form">
-      <h2>Sing up</h2>
-      <form >
-        <input
+  <div class="form">
+    <h2>Sing up</h2>
+    <form #form="ngForm" (ngSubmit)="singUp(form)">
+      <input
         type="username"
         name="username"
+        required
+        ngModel
+        #inputUsername="ngModel"
         placeholder="Username ...."
       />
-        <input
-          type="text"
-          name="email"
-          placeholder="Email address ...."
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Enter password ...."
-        />
-        <input
-          type="password"
-          name="repeat-password"
-          placeholder="Repeat your password ...."
-        />
-        <button type="submit">Sing up</button>
-        <p class="message">You already have account? <a routerLink="/sing-in">Sing in!</a></p>
-      </form>
-    </div>
-  </section>
+      <input
+        type="text"
+        name="email"
+        required
+        ngModel
+        #inputEmail="ngModel"
+        placeholder="Email address ...."
+      />
+      <input
+        type="password"
+        name="password"
+        required
+        ngModel
+        #inputPassword="ngModel"
+        placeholder="Enter password ...."
+      />
+      <input
+        type="password"
+        name="repeat-password"
+        required
+        ngModel
+        #inputRepeatPassword="ngModel"
+        placeholder="Repeat your password ...."
+      />
+      <button type="submit">Sing up</button>
+      <p class="message">
+        You already have account? <a routerLink="/sing-in">Sing in!</a>
+      </p>
+    </form>
+  </div>
+</section>

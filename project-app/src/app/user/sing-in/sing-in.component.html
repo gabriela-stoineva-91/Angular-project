@@ -1,17 +1,27 @@
 <section id="login">
-    <div class="form">
-      <h2>Sing in</h2>
-      <form class="login-form">
-        <input type="text" name="email" placeholder="Your email ...." />
-        <input
-          type="password"
-          name="password"
-          placeholder="Your password ...."
-        />
-        <button type="submit">Sing in</button>
-        <p class="message">
-          You don't have account? <a routerLink="/sing-up">Create it here!</a>
-        </p>
-      </form>
-    </div>
-  </section>
+  <div class="form">
+    <h2>Sing in</h2>
+    <form #form="ngForm" (ngSubmit)="singIn(form)" class="login-form">
+      <input
+        type="text"
+        name="username"
+        placeholder="Your username ...."
+        required
+        ngModel
+        #inputUsername="ngModel"
+      />
+      <input
+        type="password"
+        name="password"
+        required
+        ngModel
+        #inputPassword="ngModel"
+        placeholder="Your password ...."
+      />
+      <button type="submit">Sing in</button>
+      <p class="message">
+        You don't have account? <a routerLink="/sing-up">Create it here!</a>
+      </p>
+    </form>
+  </div>
+</section>
