@@ -5,7 +5,9 @@ import { RecipeRoutingModule } from './recipe-routing.module';
 import { CreateComponent } from './create/create.component';
 import { DetailsComponent } from './details/details.component';
 import { EditComponent } from './edit/edit.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RecipeService } from 'src/app/recipe/recipe.service';
+import { HttpClient } from '@angular/common/http';
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     RecipeRoutingModule,
-    FormsModule
-  ]
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
 export class RecipeModule { }

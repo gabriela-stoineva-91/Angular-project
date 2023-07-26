@@ -11,11 +11,16 @@ import { RecipeModule } from './recipe/recipe.module';
 import { RecipeRoutingModule } from './recipe/recipe-routing.module';
 import { CookbookModule } from './cookbook/cookbook.module';
 import { CookbookRoutingModule } from './cookbook/cookbook-routing.module';
+import { RecipeService } from './recipe/recipe.service';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+
+    
   
   ],
   imports: [
@@ -28,9 +33,10 @@ import { CookbookRoutingModule } from './cookbook/cookbook-routing.module';
     RecipeRoutingModule,
     CookbookModule,
     CookbookRoutingModule,
+    HttpClientModule
+  
 
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

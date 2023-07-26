@@ -1,32 +1,29 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Recipe } from '../types/recipe';
-import { environments } from 'src/environments/environment.development';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RecipeService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { 
-
-  }
-  createTheme(
-    name: string, 
-    imageUrl: string, 
+  createRecipe(
+    name: string,
+    imageUrl: string,
     category: string,
     products: string[],
     preparation: string,
-    time: Number) 
-    {
-    return this.http.post<Recipe>('/api/themes', 
-    {
-      name, 
-      imageUrl, 
-      category, 
-      products, 
-      preparation, 
-      time 
+    time: Number
+  ) {
+    return this.http.post<Recipe>(`${environment.apiUrl}/recipes.json`, {
+      name,
+      imageUrl,
+      category,
+      products,
+      preparation,
+      time,
     });
   }
 }

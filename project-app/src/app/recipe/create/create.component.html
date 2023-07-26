@@ -1,11 +1,9 @@
 <section>
   <div class="form">
     <h2>Add Your Cooking Idea</h2>
-    <form
-      #form="ngForm"
-      (ngSubmit)="createRecipeSubmitHandler(form)"
-      class="create"
-    >
+    <form class="create" #form="ngForm" (ngSubmit)="createRecipeSubmitHandler(form)">
+     
+      
       <input
         type="text"
         name="name"
