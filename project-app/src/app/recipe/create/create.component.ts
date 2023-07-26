@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-create',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent {
+  createRecipeSubmitHandler(form: NgForm): void {
+    if (form.invalid) {
+      return;
+    }
+
+    console.log(form.value);
+  }
 
 }

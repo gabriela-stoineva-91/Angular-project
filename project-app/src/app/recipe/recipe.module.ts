@@ -5,6 +5,7 @@ import { RecipeRoutingModule } from './recipe-routing.module';
 import { CreateComponent } from './create/create.component';
 import { DetailsComponent } from './details/details.component';
 import { EditComponent } from './edit/edit.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { EditComponent } from './edit/edit.component';
   ],
   imports: [
     CommonModule,
-    RecipeRoutingModule
+    RecipeRoutingModule,
+    FormsModule
   ]
 })
 export class RecipeModule { }

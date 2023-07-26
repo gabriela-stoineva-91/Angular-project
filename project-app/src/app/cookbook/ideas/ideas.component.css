@@ -1,4 +1,4 @@
-#dashboard {
+#ideas {
     margin-top: 50px;
     display: flex;
     align-items: center;
@@ -10,7 +10,7 @@
     font-size: 50px;
   }
   
-  .event {
+  .recipe-card {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,7 +26,7 @@
   -webkit-box-shadow: -4px 3px 25px 1px rgba(0,0,0,0.85);
   -moz-box-shadow: -4px 3px 25px 1px rgba(0,0,0,0.85);
   }
-  .event img {
+  .recipe-card img {
     height:16vw;
     width: 18vw;
     border-radius: 12px;
@@ -48,7 +48,7 @@
   .details-btn:hover {
     background: #ae04b4;
   }
-  .event p {
+  .recipe-card p {
     margin: auto;
     font-size: 1.2rem;
     font-weight: 700;

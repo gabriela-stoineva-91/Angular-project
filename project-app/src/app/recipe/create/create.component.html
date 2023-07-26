@@ -1,45 +1,61 @@
 <section>
-    <div class="form">
-      <h2>Add Your Cooking Idea</h2>
-      <form class="create-form">
-        <input
-          type="text"
-          name="name"
-          placeholder="Recipe's name ...."
-        />
-        <input
-          type="text"
-          name="imageUrl"
-          placeholder="Nice picture here ...."
-        />
-        <input
-          type="text"
-          name="category"
-          placeholder="Breakfast, Lunch or Dinner"
-        />
+  <div class="form">
+    <h2>Add Your Cooking Idea</h2>
+    <form
+      #form="ngForm"
+      (ngSubmit)="createRecipeSubmitHandler(form)"
+      class="create"
+    >
+      <input
+        type="text"
+        name="name"
+        ngModel
+        #inputName="ngModel"
+        placeholder="Recipe's name ...."
+        required
+      />
+      <input
+        type="text"
+        name="imageUrl"
+        ngModel
+        #inputName="ngModel"
+        placeholder="Nice picture here ...."
+        required
+      />
+      <input
+        type="text"
+        name="category"
+        ngModel
+        #inputName="ngModel"
+        placeholder="Breakfast, Lunch or Dinner"
+      />
 
-
-        <textarea
-          name="products"
-          placeholder="Needed products ...."
-          rows="10"
-          cols="50"
-        ></textarea>
-        <textarea
+      <textarea
+        name="products"
+        placeholder="Needed products ...."
+        rows="10"
+        cols="50"
+        ngModel
+        #textAreaInput="ngModel"
+        required
+      ></textarea>
+      <textarea
         name="preparation"
         placeholder="Cooking steps ...."
         rows="10"
         cols="50"
+        ngModel
+        #textAreaInput="ngModel"
+        required
       ></textarea>
-      
-        
-        <input
+
+      <input
         type="text"
         name="time"
         placeholder="Needed time in minutes ...."
       />
 
-        <button type="submit">Done</button>
-      </form>
-    </div>
-  </section>
+      <button type="submit">Done</button>
+    </form>
+  </div>
+</section>
