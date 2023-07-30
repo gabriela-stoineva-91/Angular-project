@@ -11,6 +11,7 @@ import { UserService } from 'src/app/user/user.service';
 export class IdeasComponent implements OnInit {
   cookbook: Recipe[]= [];
   isDone: boolean = true;
+  recipeId: string = '';
 
 
   constructor(

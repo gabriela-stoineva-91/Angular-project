@@ -5,4 +5,5 @@ export interface Recipe {
     products: string[];
     preparation: string;
     time: Number;
+    
 };

@@ -7,6 +7,8 @@ import { environment } from 'src/environments/environment.development';
   providedIn: 'root',
 })
 export class RecipeService {
+  urlRecipe: string = `${environment.apiUrl}/recipes.json`;
+
   constructor(private http: HttpClient) {}
 
   createRecipe(
@@ -17,9 +19,7 @@ export class RecipeService {
     preparation: string,
     time: Number
   ) {
-    const url = `${environment.apiUrl}/recipes.json`;
-
-    return this.http.post<Recipe>(url, {
+    return this.http.post<Recipe>(this.urlRecipe, {
       name,
       imageUrl,
       category,
@@ -30,8 +30,9 @@ export class RecipeService {
   }
 
   getAllRecipes() {
-    const url = `${environment.apiUrl}/recipes.json`;
-    const urlNew = 'https://food-ideas-5aa9c-default-rtdb.firebaseio.com/recipes.json'
-    return this.http.get<Recipe[]>(urlNew)
+    return this.http.get<Recipe[]>(this.urlRecipe)
+  }
+  getOneDetailsRecipe(recipeId: string) {
+    return this.http.get<Recipe[]>(`${environment.apiUrl}/recipeId/recipes.json`)
   }
 }
