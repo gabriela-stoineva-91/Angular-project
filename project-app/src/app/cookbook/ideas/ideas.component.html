@@ -1,11 +1,13 @@
 <section id="ideas">
-    <!-- Display a div with information about every post (if any)-->
+  <div *ngFor="let recipe of cookbook">
     <div class="recipe-card">
-      <img src="./images/large_deniroparty_marquee.jpg" alt="picture" />
+      <img src="{{ recipe.imageUrl }}" alt="picture" />
       <p class="title">
-        Robert De Niro Themed Party
+        {{ recipe.name }}
       </p>
-      <p class="date">15.04.2023 from 17:00</p>
+      <p class="date">{{ recipe.time }}</p>
       <a class="details-btn" href="">Details</a>
+      <a class="delete-btn" href="">Delete</a>
     </div>
-  </section>
+  </div>
+</section>

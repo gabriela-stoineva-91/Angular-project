@@ -15,12 +15,12 @@ export class UserService {
   }
 
   constructor() {
-    // try {
-    //   const lsUser = localStorage.getItem(this.USER_KEY) || '';
-    //   this.user = JSON.parse(lsUser);
-    // } catch (error) {
-    //   this.user = undefined;
-    // }
+    try {
+      const lsUser = localStorage.getItem(this.USER_KEY) || '';
+      this.user = JSON.parse(lsUser);
+    } catch (error) {
+      this.user = undefined;
+    }
   }
   
 
@@ -28,13 +28,13 @@ export class UserService {
     // this.user = {
     // };
 
-    // localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
+    localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
   }
   singUp(): void {
-    // this.user = {
+    //  this.user = {
     // };
   
-    // localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
+   localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
   }
 
 

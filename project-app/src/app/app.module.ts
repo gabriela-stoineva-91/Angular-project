@@ -19,9 +19,6 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     HomeComponent,
-
-    
-  
   ],
   imports: [
     BrowserModule,
@@ -34,8 +31,6 @@ import { HttpClientModule } from '@angular/common/http';
     CookbookModule,
     CookbookRoutingModule,
     HttpClientModule
-  
-
   ],
   bootstrap: [AppComponent]
 })

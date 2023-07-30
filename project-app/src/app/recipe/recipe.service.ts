@@ -17,7 +17,9 @@ export class RecipeService {
     preparation: string,
     time: Number
   ) {
-    return this.http.post<Recipe>(`${environment.apiUrl}/recipes.json`, {
+    const url = `${environment.apiUrl}/recipes.json`;
+
+    return this.http.post<Recipe>(url, {
       name,
       imageUrl,
       category,
@@ -25,5 +27,11 @@ export class RecipeService {
       preparation,
       time,
     });
+  }
+
+  getAllRecipes() {
+    const url = `${environment.apiUrl}/recipes.json`;
+    const urlNew = 'https://food-ideas-5aa9c-default-rtdb.firebaseio.com/recipes.json'
+    return this.http.get<Recipe[]>(urlNew)
   }
 }
