@@ -2,11 +2,9 @@
   <div *ngFor="let recipe of cookbook">
     <div class="recipe-card">
       <img src="{{ recipe.imageUrl }}" alt="picture" />
-      <p class="title">
-        {{ recipe.name }}
-      </p>
+      <p class="title">{{ recipe.name }}</p>
       <p class="date">{{ recipe.time }}</p>
-      <a class="details-btn" routerLink="/details">Details</a>
+      <a class="details-btn" routerLink="/details" >Details</a>
     </div>
   </div>
 </section>

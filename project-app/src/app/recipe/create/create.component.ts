@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RecipeService } from 'src/app/recipe/recipe.service';
+import { Recipe } from 'src/app/types/recipe';
 
 
 
@@ -13,7 +14,7 @@ import { RecipeService } from 'src/app/recipe/recipe.service';
 })
 export class CreateComponent {
   //constructor(private recipeService: RecipeService) {}
-   constructor(private recipeService: RecipeService) {}
+   constructor(private recipeService: RecipeService, private router: Router) {}
 
   createRecipeSubmitHandler(form: NgForm): void {
     if (form.invalid) {
@@ -32,7 +33,7 @@ export class CreateComponent {
         time
       )
       .subscribe(() => {
-        console.log('done');
+        this.router.navigate(['/account'])
       });
 
     console.log(form.value);

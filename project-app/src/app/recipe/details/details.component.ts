@@ -7,24 +7,20 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
-  styleUrls: ['./details.component.css']
+  styleUrls: ['./details.component.css'],
 })
-export class DetailsComponent implements OnInit{
+export class DetailsComponent implements OnInit {
   recipe: Recipe | undefined;
 
   constructor(
     private recipeService: RecipeService,
     private userService: UserService,
-    private activatedRoute: ActivatedRoute
-    ) {}
+    private activatedRoute: ActivatedRoute,
+  ) {}
 
   ngOnInit(): void {
-    this.takeRecipe();
-  }
-  takeRecipe() {
-    const recipeId = this.activatedRoute.snapshot.params['name'];
-
-    
-    console.log(recipeId)
+    // this.recipeService.createId().subscribe({
+    //   next: (res) => console.log(res)
+    // })
   }
 }
