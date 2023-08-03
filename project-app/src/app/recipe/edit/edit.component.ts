@@ -1,37 +1,47 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { RecipeService } from '../recipe.service';
 import { Recipe } from 'src/app/types/recipe';
-import { ActivatedRoute } from '@angular/router';
-
+import { ActivatedRoute, Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.css']
+  styleUrls: ['./edit.component.css'],
 })
-export class EditComponent implements OnInit{
+export class EditComponent implements OnInit {
+  recipe: Recipe | undefined;
 
-  recipe: Recipe | undefined
+  constructor(
+    private formBuilder: FormBuilder,
+    private recipeService: RecipeService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) {}
+  
 
-  constructor(private formBuilder: FormBuilder,
-              private recipeService: RecipeService,
-              private activatedRoute: ActivatedRoute) {
-
-  }
+  id = this.activatedRoute.snapshot.params['recipeId'];
   ngOnInit(): void {
-    this.editRecipe()
+    this.takeRecipe(this.id);
+  }
+  
+  takeRecipe(id: string): void {
+    this.recipeService.getOneDetailsRecipe(id).subscribe({
+      next: (recipe) => {
+        this.recipe = recipe;
+        console.log(this.id);
+      },
+    });
   }
 
-  editRecipe(): void {
-  const id = this.activatedRoute.snapshot.params['recipeId'];
-    this.recipeService.getOneDetailsRecipe(id).subscribe({
-      next: (recipe)=> {
-        this.recipe = recipe;
-        console.log(this.recipe)
-      }
-    })
-      
-    
+  editRecipeSubmitHandler(form: NgForm): void {
+    if (form.invalid) {
+      return;
+    }
+
+    this.recipeService.editRecipe(form.value, this.id).subscribe((res: any) => {
+      this.router.navigate([`/recipes/${this.id}`]);
+    });
   }
 }

@@ -10,6 +10,7 @@ import { RecipeService } from 'src/app/recipe/recipe.service';
 import { HttpClient } from '@angular/common/http';
 import { IdeasComponent } from './ideas/ideas.component';
 import { CommentsComponent } from './comments/comments.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { CommentsComponent } from './comments/comments.component';
     RecipeRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterModule
   ],
 })
 export class RecipeModule { }

@@ -1,40 +1,58 @@
 <section id="edit" *ngIf="recipe">
   <div class="form">
     <h2>Edit Your Recipe Idea</h2>
-    <form class="edit-form">
+    <form
+      class="edit-form"
+      #form="ngForm"
+      formControlName
+      (ngSubmit)="editRecipeSubmitHandler(form)"
+    >
       <input
         type="text"
         name="name"
+        ngModel
         id="edit-name"
-        placeholder="{{ recipe.name }}"
+        [(ngModel)]="recipe.name"
       />
       <input
         type="text"
         name="imageUrl"
+       ngModel
         id="edit-image"
-        placeholder="{{ recipe.imageUrl }}"
+        [(ngModel)]="recipe.imageUrl"  
       />
       <input
         type="text"
         name="category"
+        ngModel
         id="edit-category"
-        placeholder="{{ recipe.category }}"
+        aria-valuemax=""
+        [(ngModel)]="recipe.category"
       />
       <textarea
-        id="edit-description"
-        name="description"
-        placeholder="{{ recipe.preparation }}"
+        id="edit-products"
+        name="products"
+        ngModel
         rows="5"
         cols="50"
+        [(ngModel)]="recipe.products"  
+      ></textarea>
+      <textarea
+        id="edit-preparation"
+        name="preparation"
+        ngModel
+        rows="5"
+        cols="50"
+        [(ngModel)]="recipe.preparation"
       ></textarea>
       <input
         type="text"
         name="time"
-        id="date"
-        placeholder="Time: {{ recipe.time }}"
+        ngModel
+        id="time"
+        [(ngModel)]="recipe.time"
       />
       <button type="submit">Edit</button>
     </form>
   </div>
 </section>
-<p>edit-works</p>
