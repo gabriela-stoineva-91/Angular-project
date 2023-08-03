@@ -4,7 +4,7 @@
       <img src="{{ recipe.imageUrl }}" alt="picture" />
       <p class="title">{{ recipe.name }}</p>
       <p class="date">{{ recipe.time }}</p>
-      <a class="details-btn" routerLink="/details" >Details</a>
+      <a [routerLink]="recipe.recipeId" class="details-btn">Details</a>
     </div>
   </div>
 </section>

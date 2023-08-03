@@ -7,6 +7,20 @@ import { IdeasComponent } from './ideas/ideas.component';
 
 const routes: Routes = [
   {
+    path: 'recipes',
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        component: IdeasComponent,
+      },
+      {
+        path: ':recipeId',
+        component: DetailsComponent,
+      },
+    ],
+  },
+  {
     path: 'create',
     component: CreateComponent,
   },
@@ -14,14 +28,6 @@ const routes: Routes = [
     path: 'edit',
     component: EditComponent
   },
-  {
-    path: 'details',
-    component: DetailsComponent
-  },
-  {
-    path: 'cookbook',
-    component: IdeasComponent,
-  }
 ];
 
 @NgModule({

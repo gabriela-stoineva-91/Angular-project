@@ -35,7 +35,8 @@ export class RecipeService {
   }
 
   getOneDetailsRecipe(recipeId: string | undefined) {
-    return this.http.get(`${environment.apiUrl}/recipes/${recipeId}.json`);
+
+    return this.http.get<Recipe>(`${environment.apiUrl}/recipes/${recipeId}.json`);
   }
   createPropertyId(id: string): any {
       return this.http.patch(`${environment.apiUrl}/recipes/${id}.json`, {"recipeId": `${id}`});

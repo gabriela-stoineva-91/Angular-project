@@ -24,26 +24,13 @@ export class IdeasComponent implements OnInit {
     this.recipeService.getAllRecipes().subscribe({
       next: (recipes: Recipe[]) => {
         this.cookbook = Object.values(recipes);
-        this.idSubscribe(recipes);
+        Object.keys(recipes).forEach((x) =>
+          this.recipeService.createPropertyId(x).subscribe()
+        );
       },
       error: (error: string) => {
         console.error(`Error: ${error}`);
       },
     });
   }
-
-  idSubscribe(recipes: Recipe[]): void {
-    let arr = Object.keys(recipes);
-    arr.forEach((x) =>
-      this.recipeService.createPropertyId(x).subscribe({
-        next: (res: any) => {
-          console.log(res);
-        },
-        error: (error: string) => {
-          console.error(`Error: ${error}`);
-        },
-      })
-    );
-  } 
- 
 }
