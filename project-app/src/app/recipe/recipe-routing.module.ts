@@ -8,30 +8,48 @@ import { IdeasComponent } from './ideas/ideas.component';
 const routes: Routes = [
   {
     path: 'recipes',
-    children: [
-      {
-        path: '',
-        pathMatch: 'full',
-        component: IdeasComponent,
-      },
-      {
-        path: ':recipeId',
-        component: DetailsComponent,
-      },
-    ],
+    component: IdeasComponent,
   },
+  {
+    path: 'recipes/:recipeId',
+    component: DetailsComponent,
+  },
+  {
+    path: 'recipes/edit/:recipeId',
+    component: EditComponent,
+  },
+  //   children: [
+  //     {
+  //       path: '',
+  //       pathMatch: 'full',
+  //       component: IdeasComponent,
+  //     },
+
+  //     {
+  //       path: ':recipeId',
+  //       children: [
+  //         {
+  //           path: '',
+  //           pathMatch: 'full',
+  //           component: DetailsComponent,
+  //         },
+  //         {
+  //           path: 'edit',
+  //           // redirectTo: EditComponent,
+  //           component: EditComponent,
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     path: 'create',
     component: CreateComponent,
-  },
-  {
-    path: 'edit',
-    component: EditComponent
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class RecipeRoutingModule { }
+export class RecipeRoutingModule {}

@@ -28,4 +28,5 @@ export class DetailsComponent implements OnInit {
       this.recipe = recipe;
     });
   }
+
 }

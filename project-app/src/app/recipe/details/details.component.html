@@ -23,7 +23,7 @@
     </div>
     <!-- Only for logged-in users -->
     <div id="action-buttons">
-      <a routerLink="/edit" id="edit-btn">Edit</a>
+      <a [routerLink]="['../edit', recipe.recipeId]" id="edit-btn">Edit</a>
       <a routerLink="/delete" id="delete-btn">Delete</a>
     </div>
   </div>

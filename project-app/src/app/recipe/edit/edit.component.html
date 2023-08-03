@@ -1,44 +1,40 @@
-<section id="edit">
-    <div class="form">
-      <h2>Edit Your Recipe Idea</h2>
-      <form #form="ngForm" class="edit-form">
-      <!-- (ngSubmit)="createRecipeSubmitHandler(form) -->
-      <!-- <label class="time">Name:</label> -->
-        <input
-          type="text"
-          name="name"
-          id="edit-name"
-          placeholder="Edit recipe name ..."
-        />
-        <input
-          type="text"
-          name="imageUrl"
-          id="edit-image"
-          placeholder="Recipe Image"
-        />
-        <input
-          type="text"
-          name="category"
-          id="edit-category"
-          placeholder="Category"
-        />
-        <textarea
-          id="edit-description"
-          name="description"
-          placeholder="Description"
-          rows="5"
-          cols="50"
-        ></textarea>
-        
-        <!-- <label class="time">Time:</label> -->
-        <input
+<section id="edit" *ngIf="recipe">
+  <div class="form">
+    <h2>Edit Your Recipe Idea</h2>
+    <form class="edit-form">
+      <input
+        type="text"
+        name="name"
+        id="edit-name"
+        placeholder="{{ recipe.name }}"
+      />
+      <input
+        type="text"
+        name="imageUrl"
+        id="edit-image"
+        placeholder="{{ recipe.imageUrl }}"
+      />
+      <input
+        type="text"
+        name="category"
+        id="edit-category"
+        placeholder="{{ recipe.category }}"
+      />
+      <textarea
+        id="edit-description"
+        name="description"
+        placeholder="{{ recipe.preparation }}"
+        rows="5"
+        cols="50"
+      ></textarea>
+      <input
         type="text"
         name="time"
         id="date"
-        placeholder="Cooking time ..."
+        placeholder="Time: {{ recipe.time }}"
       />
-
-        <button type="submit">Edit</button>
-      </form>
-    </div>
-  </section>
+      <button type="submit">Edit</button>
+    </form>
+  </div>
+</section>
+<p>edit-works</p>
