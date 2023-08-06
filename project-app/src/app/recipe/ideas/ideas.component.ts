@@ -4,6 +4,7 @@ import { Recipe } from 'src/app/types/recipe';
 import { UserService } from 'src/app/user/user.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
+import { mergeMap } from 'rxjs';
 
 @Component({
   selector: 'app-ideas',
@@ -24,13 +25,11 @@ export class IdeasComponent implements OnInit {
     this.recipeService.getAllRecipes().subscribe({
       next: (recipes: Recipe[]) => {
         this.cookbook = Object.values(recipes);
-        Object.keys(recipes).forEach((x) =>
-          this.recipeService.createPropertyId(x).subscribe()
-        );
       },
       error: (error: string) => {
         console.error(`Error: ${error}`);
       },
     });
   }
+  
 }

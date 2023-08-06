@@ -30,7 +30,6 @@ export class EditComponent implements OnInit {
     this.recipeService.getOneDetailsRecipe(id).subscribe({
       next: (recipe) => {
         this.recipe = recipe;
-        console.log(this.id);
       },
     });
   }

@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
 })
 export class RecipeService {
   urlRecipe: string = `${environment.apiUrl}/recipes.json`;
-  
 
   constructor(private http: HttpClient) {}
 
@@ -36,15 +35,17 @@ export class RecipeService {
   }
 
   getOneDetailsRecipe(id: string | undefined) {
-
     return this.http.get<Recipe>(`${environment.apiUrl}/recipes/${id}.json`);
   }
-  createPropertyId(id: string): any {
-      return this.http.patch<Recipe>(`${environment.apiUrl}/recipes/${id}.json`, {"recipeId": `${id}`});
+  patchPropertyId(id: string): any {
+    return this.http.patch<Recipe>(`${environment.apiUrl}/recipes/${id}.json`, {
+      recipeId: `${id}`,
+    });
   }
   editRecipe(formValue: object, id: string): any {
-    return this.http.patch<Recipe>(`${environment.apiUrl}/recipes/${id}.json`, formValue);
+    return this.http.patch<Recipe>(
+      `${environment.apiUrl}/recipes/${id}.json`,
+      formValue
+    );
   }
-  }
- 
-
+}

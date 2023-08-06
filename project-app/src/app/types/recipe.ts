@@ -2,8 +2,8 @@ export interface Recipe {
     name: string;
     imageUrl: string;
     category: string;
-    products: string[];
+    products: string;
     preparation: string;
-    time: Number;
+    time: string;
     recipeId: string | undefined;
 };
