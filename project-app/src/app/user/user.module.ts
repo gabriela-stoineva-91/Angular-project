@@ -13,7 +13,6 @@ import { UserRoutingModule } from './user-routing.module';
     AccountComponent,
     SingInComponent,
     SingUpComponent,
-  
   ],
   imports: [
     CommonModule,

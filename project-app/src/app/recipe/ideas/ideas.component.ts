@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { RecipeService } from 'src/app/recipe/recipe.service';
 import { Recipe } from 'src/app/types/recipe';
 import { UserService } from 'src/app/user/user.service';
@@ -11,7 +11,7 @@ import { mergeMap } from 'rxjs';
   templateUrl: './ideas.component.html',
   styleUrls: ['./ideas.component.css'],
 })
-export class IdeasComponent implements OnInit {
+export class IdeasComponent implements OnInit, OnDestroy {
   cookbook: Recipe[] = [];
   recipeId: string | undefined;
 
@@ -31,4 +31,9 @@ export class IdeasComponent implements OnInit {
       },
     });
   }
+  ngOnDestroy(): void {
+    
+  }
+  
+  
 }

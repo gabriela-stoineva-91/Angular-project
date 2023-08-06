@@ -123,4 +123,11 @@
     background: rgb(125, 11, 246);
     border-radius: 5px;
   }
+  #details-comment {
+    width: 85%;
+    margin: 30px auto;
+    height: auto;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
   

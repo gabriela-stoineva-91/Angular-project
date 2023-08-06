@@ -49,6 +49,11 @@ export class RecipeService {
   deleteRecipe(id: string) {
     return this.http.delete<Recipe>(`${this.urlRecipe}/${id}.json`);
   }
+  addComment(id: string, inputValue: string) {
+    return this.http.patch(`${this.urlRecipe}/comments/${id}.json`, {
+      "comments": inputValue
+    })
+  }
 }
 
 //Object.keys(recipes).map((x)=> this.recipeService.patchPropertyId(x).subscribe())

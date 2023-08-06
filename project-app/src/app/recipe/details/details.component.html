@@ -28,9 +28,21 @@
       <button>
         <a [routerLink]="['../edit', recipe.recipeId]" id="edit-btn">Edit</a>
       </button>
-      <button><a (click)="delete()" id="delete-btn">Delete</a></button>
+      <button (click)="delete()"><a  id="delete-btn">Delete</a></button>
+      <button (click)="comment()"><a>Comment</a></button>
     </div>
   </div>
+  <div>
+    <textarea
+      ngModel
+      name="comment"
+      id="details-comment"
+      cols="30"
+      placeholder="Type your comment here......"
+      rows="10"
+    ></textarea>
+  </div>
+  
   <div id="popup" *ngIf="isDeleteClicked">
     <div *ngIf="!isDeleted">
       <p>

@@ -47,4 +47,7 @@ export class DetailsComponent implements OnInit {
   no(): void {
     this.isDeleteClicked = false;
   }
+  comment() {
+    
+  }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RecipeService } from 'src/app/recipe/recipe.service';
@@ -9,7 +9,7 @@ import { Recipe } from 'src/app/types/recipe';
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.css'],
 })
-export class CreateComponent {
+export class CreateComponent implements OnDestroy{
   id: string | undefined;
 
   constructor(private recipeService: RecipeService, private router: Router) {}
@@ -25,13 +25,15 @@ export class CreateComponent {
       .createRecipe(name, imageUrl, category, products, preparation, time)
       .subscribe({
         next: (res) => {
-          this.id = res.name;
-          this.createId(this.id);
+          this.createId((this.id = res.name));
           this.router.navigate(['/account']);
         },
       });
   }
   createId(id: string): void {
     this.recipeService.patchPropertyId(id).subscribe();
+  }
+  ngOnDestroy(): void {
+    
   }
 }

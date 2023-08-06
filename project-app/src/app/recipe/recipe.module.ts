@@ -9,7 +9,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RecipeService } from 'src/app/recipe/recipe.service';
 import { HttpClient } from '@angular/common/http';
 import { IdeasComponent } from './ideas/ideas.component';
-import { CommentsComponent } from './comments/comments.component';
 import { RouterModule } from '@angular/router';
 
 
@@ -19,7 +18,6 @@ import { RouterModule } from '@angular/router';
     DetailsComponent,
     EditComponent,
     IdeasComponent,
-    CommentsComponent,
   ],
   imports: [
     CommonModule,

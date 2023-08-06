@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Subscription, tap } from 'rxjs';
 import { User } from '../types/user';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
@@ -10,37 +11,34 @@ export class UserService {
   user: User | undefined;
   USER_KEY = '[user]';
 
+  userUrl: string = `${environment.apiUrl}/users`;
+
   get isSingIn(): boolean {
     return !!this.user;
   }
 
-  constructor() {
-    try {
-      const lsUser = localStorage.getItem(this.USER_KEY) || '';
-      this.user = JSON.parse(lsUser);
-    } catch (error) {
-      this.user = undefined;
-    }
+  constructor(private http: HttpClient) {}
+
+  singUp(
+    username: string,
+    email: string,
+    password: string,
+    repeatPassword: string
+  ) {
+    return this.http.post<User>(`${this.userUrl}.json`, {
+        username,
+        email,
+        password,
+        repeatPassword,
+      })
+      
   }
-  
-
-  singIn(): void {
-    // this.user = {
-    // };
-
-    localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
+  singIn(username: string, password: string) {
+    this.user = {username, password}
+    localStorage.setItem(this.USER_KEY, JSON.stringify({username, password}));
   }
-  singUp(): void {
-    //  this.user = {
-    // };
-  
-   localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
-  }
-
-
   singOut(): void {
-    // this.user = undefined;
-    // localStorage.removeItem(this.USER_KEY);
+    localStorage.removeItem(this.USER_KEY);
+    this.user = undefined;
   }
 }
-
