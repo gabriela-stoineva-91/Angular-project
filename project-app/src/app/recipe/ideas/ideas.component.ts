@@ -31,5 +31,4 @@ export class IdeasComponent implements OnInit {
       },
     });
   }
-  
 }

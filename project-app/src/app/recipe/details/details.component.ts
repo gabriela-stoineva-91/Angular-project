@@ -12,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DetailsComponent implements OnInit {
   recipe: Recipe | undefined;
   isDeleteClicked: boolean = false;
+  isDeleted: boolean = false;
 
   constructor(
     private recipeService: RecipeService,
@@ -37,11 +38,11 @@ export class DetailsComponent implements OnInit {
     const id = this.activatedRoute.snapshot.params['recipeId'];
     this.recipeService.deleteRecipe(id).subscribe({
       next: () => {
-        this.isDeleteClicked = false;
-        //this.router.navigate(['/account']);
+        
       },
       error: (err: string) => alert(err),
     });
+    this.isDeleted = true;
   }
   no(): void {
     this.isDeleteClicked = false;

@@ -50,3 +50,5 @@ export class RecipeService {
     return this.http.delete<Recipe>(`${this.urlRecipe}/${id}.json`);
   }
 }
+
+//Object.keys(recipes).map((x)=> this.recipeService.patchPropertyId(x).subscribe())

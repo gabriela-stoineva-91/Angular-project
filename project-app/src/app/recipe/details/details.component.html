@@ -23,21 +23,23 @@
         </span>
       </div>
     </div>
-    
-    <div class="action-buttons" >
+
+    <div class="action-buttons">
       <button>
         <a [routerLink]="['../edit', recipe.recipeId]" id="edit-btn">Edit</a>
       </button>
       <button><a (click)="delete()" id="delete-btn">Delete</a></button>
     </div>
-   
   </div>
-  <div id="popup"*ngIf="isDeleteClicked">
-    <p>
-      Are you sure that you want to DELETE your recipe : {{ recipe.name }}?
-    </p>
-    <img src="../../../assets/popup.jpg" alt="image" />
-    <button><a (click)="yes()">Yes</a></button>
-    <button><a (click)="no()">No</a></button>
+  <div id="popup" *ngIf="isDeleteClicked">
+    <div *ngIf="!isDeleted">
+      <p>
+        Are you sure that you want to DELETE your recipe: {{ recipe.name }}?
+      </p>
+      <img src="../../../assets/popup.jpg" alt="image" />
+      <button (click)="yes()"><a>Yes</a></button>
+      <button (click)="no()"><a>No</a></button>
+    </div>
+    <p *ngIf="isDeleted">You successful deleted: {{ recipe.name }}!</p>
   </div>
 </section>
