@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Recipe } from 'src/app/types/recipe';
 import { RecipeService } from '../recipe.service';
 import { UserService } from 'src/app/user/user.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -15,7 +15,8 @@ export class DetailsComponent implements OnInit {
   constructor(
     private recipeService: RecipeService,
     private userService: UserService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -28,5 +29,14 @@ export class DetailsComponent implements OnInit {
       this.recipe = recipe;
     });
   }
-
+  delete(): void {
+    const id = this.activatedRoute.snapshot.params['recipeId'];
+    
+    this.recipeService.deleteRecipe(id).subscribe({
+      next: () => {
+        this.router.navigate(['/account']);
+      },
+      error: (err: string) => alert(err),
+    });
+  }
 }

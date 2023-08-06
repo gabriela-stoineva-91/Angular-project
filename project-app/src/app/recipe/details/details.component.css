@@ -70,7 +70,19 @@
     
   }
   
-  #action-buttons a {
+  #action-buttons button{
+    text-decoration: none;
+    margin: auto 50px;
+    font-size: 21px;
+    width: 180px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px black;
+    background: rgb(125, 11, 246);
+    border-radius: 5px;
+  }
+  #action-buttons a{
     text-decoration: none;
     margin: auto 50px;
     font-size: 21px;
