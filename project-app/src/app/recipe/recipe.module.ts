@@ -26,7 +26,7 @@ import { RouterModule } from '@angular/router';
     RecipeRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
   ],
 })
 export class RecipeModule { }

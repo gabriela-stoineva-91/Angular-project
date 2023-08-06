@@ -9,9 +9,8 @@ import { UserModule } from './user/user.module';
 import { UserRoutingModule } from './user/user-routing.module';
 import { RecipeModule } from './recipe/recipe.module';
 import { RecipeRoutingModule } from './recipe/recipe-routing.module';
-import { RecipeService } from './recipe/recipe.service';
-import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
+import { ComponentFixture } from '@angular/core/testing';
 
 @NgModule({
   declarations: [
@@ -28,6 +27,6 @@ import { HttpClientModule } from '@angular/common/http';
     RecipeRoutingModule,
     HttpClientModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

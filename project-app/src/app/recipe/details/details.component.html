@@ -1,30 +1,43 @@
 <section id="details" *ngIf="recipe">
-  <div id="details-wrapper">
-    <img id="details-img" src="{{recipe.imageUrl}}" alt="image" />
-    <p id="details-title">{{recipe.name}}</p>
-    <p id="details-category">Category: <span id="categories">{{recipe.category}}</span></p>
+  <div id="details-wrapper" *ngIf="!isDeleteClicked">
+    <img id="details-img" src="{{ recipe.imageUrl }}" alt="image" />
+    <p id="details-title">{{ recipe.name }}</p>
+    <p id="details-category">
+      Category: <span id="categories">{{ recipe.category }}</span>
+    </p>
     <p id="details-date">
-      Time:<span id="date">{{recipe.time}}</span>
+      Time:<span id="date">{{ recipe.time }}</span>
     </p>
 
     <div id="info-wrapper">
       <div id="details-description">
         <span>
-          {{recipe.products}}
+          {{ recipe.products }}
         </span>
       </div>
     </div>
     <div id="info-wrapper">
       <div id="details-description">
         <span>
-          {{recipe.preparation}}
+          {{ recipe.preparation }}
         </span>
       </div>
     </div>
-    <!-- Only for logged-in users -->
-    <div id="action-buttons">
-      <button><a [routerLink]="['../edit', recipe.recipeId]" id="edit-btn">Edit</a></button>
-      <button (click)="delete()"><a id="delete-btn">Delete</a></button>
+    
+    <div class="action-buttons" >
+      <button>
+        <a [routerLink]="['../edit', recipe.recipeId]" id="edit-btn">Edit</a>
+      </button>
+      <button><a (click)="delete()" id="delete-btn">Delete</a></button>
     </div>
+   
+  </div>
+  <div id="popup"*ngIf="isDeleteClicked">
+    <p>
+      Are you sure that you want to DELETE your recipe : {{ recipe.name }}?
+    </p>
+    <img src="../../../assets/popup.jpg" alt="image" />
+    <button><a (click)="yes()">Yes</a></button>
+    <button><a (click)="no()">No</a></button>
   </div>
 </section>
