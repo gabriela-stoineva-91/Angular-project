@@ -25,7 +25,7 @@ import { ComponentFixture } from '@angular/core/testing';
     UserRoutingModule,
     RecipeModule,
     RecipeRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   bootstrap: [AppComponent],
 })
