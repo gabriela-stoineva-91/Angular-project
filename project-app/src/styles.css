@@ -1,6 +1,6 @@
-body {
+html {
     background-image: url('/assets/fresh-vegetables-fruits-and-nuts-royalty-free-image-943001868-1550249117.jpg');
-    background-size: 500px;
+    /* background-size: 500px; */
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
