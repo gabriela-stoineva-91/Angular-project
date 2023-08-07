@@ -13,6 +13,9 @@ export class DetailsComponent implements OnInit {
   recipe: Recipe | undefined;
   isDeleteClicked: boolean = false;
   isDeleted: boolean = false;
+  token: any;
+  ownerId: any;
+
 
   constructor(
     private recipeService: RecipeService,
@@ -27,7 +30,7 @@ export class DetailsComponent implements OnInit {
   getRecipe(): void {
     const id = this.activatedRoute.snapshot.params['recipeId'];
 
-    this.recipeService.getOneDetailsRecipe(id).subscribe((recipe: any) => {
+    this.recipeService.getOneDetailsRecipe(id).subscribe((recipe: Recipe) => {
       this.recipe = recipe;
     });
   }
@@ -47,7 +50,17 @@ export class DetailsComponent implements OnInit {
   no(): void {
     this.isDeleteClicked = false;
   }
-  comment() {
+  comment(): void{
+    
+  }
+  get isOwner(): boolean {
+    this.token = localStorage.getItem('user')
+    this.ownerId = JSON.parse(this.token).userId;
+    if (this.recipe?.ownerId === this.ownerId) {
+      return true
+    } else {
+      return false
+    }
     
   }
 }

@@ -13,7 +13,8 @@ import { UserService} from 'src/app/user/user.service';
 })
 export class CreateComponent implements OnDestroy{
   id: string | undefined;
-  ownerId: string | undefined = '';
+  ownerId: string | null = '';
+  token: any;
   
 
   constructor(private recipeService: RecipeService, private router: Router, private userService: UserService) {}
@@ -22,7 +23,8 @@ export class CreateComponent implements OnDestroy{
     if (form.invalid) {
       return;
     }
-    this.ownerId = this.userService.userId;
+    this.token = localStorage.getItem('user')
+    this.ownerId = JSON.parse(this.token).userId;
     
     const { name, imageUrl, category, products, preparation, time } =
       form.value;

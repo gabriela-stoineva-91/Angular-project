@@ -19,7 +19,7 @@ export class RecipeService {
     products: string,
     preparation: string,
     time: string,
-    ownerId: string | undefined,
+    ownerId: string | null,
   ) {
     return this.http.post<Recipe>(`${this.urlRecipe}.json`, {
       name,
@@ -28,6 +28,7 @@ export class RecipeService {
       products,
       preparation,
       time,
+      ownerId
     });
   }
 

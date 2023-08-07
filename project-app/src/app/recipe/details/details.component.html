@@ -10,39 +10,40 @@
     </p>
 
     <div id="info-wrapper">
-      <div id="details-description">
+      <div class="details-description">
         <span>
           {{ recipe.products }}
         </span>
       </div>
     </div>
-    <div id="info-wrapper">
-      <div id="details-description">
-        <span>
-          {{ recipe.preparation }}
-        </span>
-      </div>
+
+    <div class="details-description">
+      <span>
+        {{ recipe.preparation }}
+      </span>
     </div>
 
-    <div class="action-buttons">
+    <div class="comment-button" *ngIf="!isOwner">
+      <button (click)="comment()"><a>Comment</a></button>
+    </div>
+    <div class="action-buttons" *ngIf="isOwner">
       <button>
         <a [routerLink]="['../edit', recipe.recipeId]" id="edit-btn">Edit</a>
       </button>
-      <button (click)="delete()"><a  id="delete-btn">Delete</a></button>
-      <button (click)="comment()"><a>Comment</a></button>
+      <button (click)="delete()"><a id="delete-btn">Delete</a></button>
+    </div>
+    <div class="details-description" *ngIf="!isOwner">
+      <textarea
+        ngModel
+        name="comment"
+        id="details-comment"
+        cols="30"
+        placeholder="Type your comment here......"
+        rows="10"
+      ></textarea>
     </div>
   </div>
-  <div>
-    <textarea
-      ngModel
-      name="comment"
-      id="details-comment"
-      cols="30"
-      placeholder="Type your comment here......"
-      rows="10"
-    ></textarea>
-  </div>
-  
+
   <div id="popup" *ngIf="isDeleteClicked">
     <div *ngIf="!isDeleted">
       <p>
