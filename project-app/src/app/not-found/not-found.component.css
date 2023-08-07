@@ -1,0 +1,11 @@
+.not-found {
+    color: url(../../assets/5203172.jpg);
+}
+.not-found img{
+    /* size: 150px;
+    height: inherit; */
+    image-rendering:unset;
+    image-orientation:unset;
+    height: 80%;
+    width: 100%;
+}
