@@ -18,7 +18,6 @@ export class DetailsComponent implements OnInit {
   ownerId: any;
   comments: string[] = [];
   isEmptyComment: boolean = false;
-  
 
   constructor(
     private recipeService: RecipeService,
@@ -51,15 +50,21 @@ export class DetailsComponent implements OnInit {
   no(): void {
     this.isDeleteClicked = false;
   }
-  
+  get isSingIn(): boolean {
+    if (!localStorage.getItem('user')) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   get isOwner(): boolean {
     this.token = localStorage.getItem('user');
     this.ownerId = JSON.parse(this.token).userId;
     if (this.recipe?.ownerId === this.ownerId) {
       return true;
-    } else {
-      return false;
     }
+    return false;
   }
   commentHandler(form: NgForm): void {
     if (form.invalid) {
@@ -67,31 +72,37 @@ export class DetailsComponent implements OnInit {
     }
     const id = this.activatedRoute.snapshot.params['recipeId'];
     this.token = localStorage.getItem('user');
-    this.ownerId = JSON.parse(this.token).userId;
+    if (this.ownerId) {
+      this.ownerId = JSON.parse(this.token)?.userId;
 
-    const { comment } = form.value;
-    
-    this.recipeService.addComment(id, comment, this.ownerId).subscribe({
-      next: (res) => {
-        this.viewAllComments();
-        form.reset()
-      },
-      error: (err) => {
-        alert(err.message);
-      },
-    });
-    
+      const { comment } = form.value;
+
+      this.recipeService.addComment(id, comment, this.ownerId).subscribe({
+        next: (res) => {
+          this.viewAllComments();
+          form.reset();
+        },
+        error: (err) => {
+          alert(err.message);
+        },
+      });
+    }
   }
   viewAllComments() {
     const id = this.activatedRoute.snapshot.params['recipeId'];
+
     this.recipeService.allComments().subscribe({
       next: (res) => {
-        this.comments = Object.values(res).filter((x) => x.recipeId === id).map((a)=> a.comment);
+        this.comments = Object.values(res)
+          .filter((x) => x.recipeId === id)
+          .map((a) => a.comment);
         if (this.comments.length === 0) {
           this.isEmptyComment = true;
         }
-      }
-    })
-
+      },
+      error: (error) => {
+        alert(error.message);
+      },
+    });
   }
 }

@@ -11,7 +11,7 @@ Front-end part ot this app is build with Angular.
 Back-end part use Firebase - Realtime Database and Authentication.
 To checks user's authentication and authorization is implement custom logic used localeStorage and custom token.
 User validation input in function from Angular/firebase/Auth.
-Create recipe function only has validate to required all input fields.
+Create recipe function has validate to required all input fields.
 Error handlings used custom implement functions after every http request. 
 For error path app used not-fount page.
 
