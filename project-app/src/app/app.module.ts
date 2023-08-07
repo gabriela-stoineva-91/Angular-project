@@ -11,6 +11,9 @@ import { RecipeModule } from './recipe/recipe.module';
 import { RecipeRoutingModule } from './recipe/recipe-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture } from '@angular/core/testing';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from 'src/environments/environment.development';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,8 @@ import { ComponentFixture } from '@angular/core/testing';
     RecipeModule,
     RecipeRoutingModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
   ],
   bootstrap: [AppComponent],
 })

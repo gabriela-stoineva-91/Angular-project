@@ -9,23 +9,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./sing-up.component.css'],
 })
 export class SingUpComponent {
-  // form = this.fb.group({
-  //   username: ['', [Validators.required, Validators.minLength(5)]],
-  //   email: [
-  //     '',
-  //     [Validators.required, appEmailValidator()],
-  //   ],
-  //   tel: [''],
-  //   passGroup: this.fb.group(
-  //     {
-  //       password: ['', [Validators.required, Validators.minLength(5)]],
-  //       rePassword: ['', [Validators.required]],
-  //     },
-  //     {
-  //       validators: [matchPasswordsValidator('password', 'rePassword')],
-  //     }
-  //   ),
-  // });
 
   constructor(
     private fb: FormBuilder,

@@ -16,7 +16,7 @@
     justify-content: center;
     flex-direction: column;
     width: 60vw;
-    height: 70vh;
+    height: 60vh;
     padding: 10px;
     margin: auto;
     background-color: #dadafc;
@@ -27,8 +27,8 @@
   -moz-box-shadow: -4px 3px 25px 1px rgba(0,0,0,0.85);
   }
   .recipe-card img {
-    height:30vw;
-    width: 40vw;
+    height:25vw;
+    width: 25vw;
     border-radius: 12px;
     border: 1px solid black;
     box-shadow: -4px 3px 25px 1px rgba(0,0,0,0.85);
