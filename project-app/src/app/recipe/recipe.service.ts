@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class RecipeService {
   urlRecipe: string = `${environment.apiUrl}/recipes`;
+  urlComments: string = `${environment.apiUrl}/comments`
 
   constructor(private http: HttpClient) {}
 
@@ -19,7 +20,7 @@ export class RecipeService {
     products: string,
     preparation: string,
     time: string,
-    ownerId: string | null,
+    ownerId: string | null
   ) {
     return this.http.post<Recipe>(`${this.urlRecipe}.json`, {
       name,
@@ -28,7 +29,7 @@ export class RecipeService {
       products,
       preparation,
       time,
-      ownerId
+      ownerId,
     });
   }
 
@@ -37,7 +38,6 @@ export class RecipeService {
   }
 
   getOneDetailsRecipe(id: string | undefined) {
-   
     return this.http.get<Recipe>(`${this.urlRecipe}/${id}.json`);
   }
   patchPropertyId(id: string): any {
@@ -51,10 +51,13 @@ export class RecipeService {
   deleteRecipe(id: string) {
     return this.http.delete<Recipe>(`${this.urlRecipe}/${id}.json`);
   }
-  addComment(id: string, inputValue: string) {
-    return this.http.patch(`${this.urlRecipe}/comments/${id}.json`, {
-      "comments": inputValue
-    })
+  addComment(id: string, inputValue: string, ownerId: string) {
+    const obj = {
+      comment: inputValue,
+      recipeId: id,
+      ownerId: ownerId,
+    };
+    return this.http.post(`${this.urlComments}.json`, obj);
   }
 }
 

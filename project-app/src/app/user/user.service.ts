@@ -34,20 +34,19 @@ export class UserService {
     this.angularFireAuth
       .signInWithEmailAndPassword(email, password)
       .then((res) => {
-        console.log(res);
-
         this.token = res.user?.refreshToken;
         this.userId = res.user?.uid;
         const obj = {
           token: this.token,
           userId: this.userId,
         };
-
         localStorage.setItem(this.USER_KEY, JSON.stringify(obj));
         alert('You are Successfully logged in!');
+        this.router.navigate(['/welcome']);
       })
       .catch((err) => {
         alert(err.message);
+        this.router.navigate(['/sing-in'])
       });
   }
   signOutService(): void {

@@ -17,6 +17,6 @@ export class SingInComponent {
     }
     const { email, password } = form.value;
     this.userService.signInService(email, password)
-    this.router.navigate(['/welcome']);
+    
   }
 }
