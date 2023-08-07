@@ -15,8 +15,8 @@ export class SingInComponent {
     if (form.invalid) {
       return;
     }
-    const { username, password } = form.value;
-    this.userService.singIn(username, password);
+    const { email, password } = form.value;
+    this.userService.signInService(email, password)
     this.router.navigate(['/welcome']);
   }
 }

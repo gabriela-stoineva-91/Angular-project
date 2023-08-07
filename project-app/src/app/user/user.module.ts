@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FormsModule} from "@angular/forms";
 
 import { AccountComponent } from './account/account.component';
 import { SingInComponent } from './sing-in/sing-in.component';

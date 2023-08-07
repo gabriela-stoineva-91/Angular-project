@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 export class SingUpComponent {
 
   constructor(
-    private fb: FormBuilder,
     private userService: UserService,
     private router: Router
   ) {}
@@ -20,13 +19,9 @@ export class SingUpComponent {
     if (form.invalid) {
       return;
     }
-    const { username, email, password, repeatPassword } = form.value;
+    const {email, password} = form.value;
     
-    this.userService
-      .singUp(username!, email!, password!, repeatPassword!)
-      .subscribe((res: any) => {
-        console.log(res);
-        this.router.navigate(['/welcome']);
-      });
+    this.userService.signUpService(email, password)
+   
   }
 }

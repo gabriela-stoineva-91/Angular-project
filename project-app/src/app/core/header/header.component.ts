@@ -9,6 +9,6 @@ import { UserService } from 'src/app/user/user.service';
 export class HeaderComponent {
   constructor(private userService: UserService) {}
   singOutHandler(): void {
-    this.userService.singOut()
+    this.userService.signOutService()
   }
 }
