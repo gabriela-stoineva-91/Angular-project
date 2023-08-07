@@ -16,6 +16,9 @@ export class DetailsComponent implements OnInit {
   isDeleted: boolean = false;
   token: any;
   ownerId: any;
+  comments: string[] = [];
+  isEmptyComment: boolean = false;
+  
 
   constructor(
     private recipeService: RecipeService,
@@ -41,16 +44,14 @@ export class DetailsComponent implements OnInit {
     const id = this.activatedRoute.snapshot.params['recipeId'];
     this.recipeService.deleteRecipe(id).subscribe({
       next: () => {},
-      error: (err: string) => alert(err),
+      error: (err) => alert(err.message),
     });
     this.isDeleted = true;
   }
   no(): void {
     this.isDeleteClicked = false;
   }
-  comment(): void {
-    const id = this.activatedRoute.snapshot.params['recipeId'];
-  }
+  
   get isOwner(): boolean {
     this.token = localStorage.getItem('user');
     this.ownerId = JSON.parse(this.token).userId;
@@ -69,11 +70,28 @@ export class DetailsComponent implements OnInit {
     this.ownerId = JSON.parse(this.token).userId;
 
     const { comment } = form.value;
+    
     this.recipeService.addComment(id, comment, this.ownerId).subscribe({
-      next: (res) => {},
+      next: (res) => {
+        this.viewAllComments();
+        form.reset()
+      },
       error: (err) => {
         alert(err.message);
       },
     });
+    
+  }
+  viewAllComments() {
+    const id = this.activatedRoute.snapshot.params['recipeId'];
+    this.recipeService.allComments().subscribe({
+      next: (res) => {
+        this.comments = Object.values(res).filter((x) => x.recipeId = id).map((a)=> a.comment);
+        if (this.comments.length === 0) {
+          this.isEmptyComment = true;
+        }
+      }
+    })
+
   }
 }

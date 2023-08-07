@@ -1,65 +1,81 @@
 <section id="details" *ngIf="recipe">
-  <form  #form="ngForm"
-  (ngSubmit)="commentHandler(form)">
-  <div id="details-wrapper" *ngIf="!isDeleteClicked">
-    <img id="details-img" src="{{ recipe.imageUrl }}" alt="image" />
-    <p id="details-title">{{ recipe.name }}</p>
-    <p id="details-category">
-      Category: <span id="categories">{{ recipe.category }}</span>
-    </p>
-    <p id="details-date">
-      Time:<span id="date">{{ recipe.time }}</span>
-    </p>
+  <form #form="ngForm" (ngSubmit)="commentHandler(form)">
+    <div id="details-wrapper" *ngIf="!isDeleteClicked">
+      <img id="details-img" src="{{ recipe.imageUrl }}" alt="image" />
+      <p id="details-title">{{ recipe.name }}</p>
+      <p id="details-category">
+        Category: <span id="categories">{{ recipe.category }}</span>
+      </p>
+      <p id="details-date">
+        Time:<span id="date">{{ recipe.time }}</span>
+      </p>
 
-    <div id="info-wrapper">
+      <div id="info-wrapper">
+        <div class="details-description">
+          <span>
+            {{ recipe.products }}
+          </span>
+        </div>
+      </div>
+
       <div class="details-description">
         <span>
-          {{ recipe.products }}
+          {{ recipe.preparation }}
         </span>
+      </div>
+
+      <div class="comment-button" *ngIf="!isOwner">
+        <button type="submit"><a>Comment</a></button>
+        <button type="button" (click)="viewAllComments()">
+          <a>All comments</a>
+        </button>
+      </div>
+
+      <div class="action-buttons" *ngIf="isOwner">
+        <button>
+          <a [routerLink]="['../edit', recipe.recipeId]" id="edit-btn">Edit</a>
+        </button>
+        <button (click)="delete()"><a id="delete-btn">Delete</a></button>
+      </div>
+      <div class="details-description" *ngIf="!isOwner">
+        <textarea
+          class="details-description"
+          name="comment"
+          placeholder="Type your comment here ...."
+          rows="10"
+          cols="50"
+          ngModel
+          #textAreaCommentInput="ngModel"
+          required
+        ></textarea>
+      </div>
+      <div class="comments-view">
+        
+        <div class="comments-view" *ngIf="isEmptyComment">
+          <p class="comments-view">There are no comments yet!</p>
+          
+        </div>
+        <p class="comments-view" *ngIf="!isEmptyComment">
+          All comments about this {{ recipe.name }} recipe you can see here:
+        </p>
+        <div class="comments-view" *ngFor="let comment of comments">
+          <span>
+            {{ comment }}
+          </span>
+        </div>
       </div>
     </div>
 
-    <div class="details-description">
-      <span>
-        {{ recipe.preparation }}
-      </span>
+    <div id="popup" *ngIf="isDeleteClicked">
+      <div *ngIf="!isDeleted">
+        <p>
+          Are you sure that you want to DELETE your recipe: {{ recipe.name }}?
+        </p>
+        <img src="../../../assets/popup.jpg" alt="image" />
+        <button (click)="yes()"><a>Yes</a></button>
+        <button (click)="no()"><a>No</a></button>
+      </div>
+      <p *ngIf="isDeleted">You successful deleted: {{ recipe.name }}!</p>
     </div>
-   
-    <div class="comment-button" *ngIf="!isOwner">
-      <button type="submit"><a>Comment</a></button>
-    </div>
-    <div class="action-buttons" *ngIf="isOwner">
-      <button>
-        <a [routerLink]="['../edit', recipe.recipeId]" id="edit-btn">Edit</a>
-      </button>
-      <button (click)="delete()"><a id="delete-btn">Delete</a></button>
-    </div>
-    <div class="details-description" *ngIf="!isOwner">
-     
-        <textarea class="details-description"
-        name="comment"
-        placeholder="Type your comment here ...."
-        rows="10"
-        cols="50"
-        ngModel
-        #textAreaCommentInput="ngModel"
-        required
-      ></textarea>
-      
-      
-    </div>
-  </div>
-
-  <div id="popup" *ngIf="isDeleteClicked">
-    <div *ngIf="!isDeleted">
-      <p>
-        Are you sure that you want to DELETE your recipe: {{ recipe.name }}?
-      </p>
-      <img src="../../../assets/popup.jpg" alt="image" />
-      <button (click)="yes()"><a>Yes</a></button>
-      <button (click)="no()"><a>No</a></button>
-    </div>
-    <p *ngIf="isDeleted">You successful deleted: {{ recipe.name }}!</p>
-  </div>
-</form>
+  </form>
 </section>

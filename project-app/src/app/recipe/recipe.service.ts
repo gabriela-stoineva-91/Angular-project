@@ -59,6 +59,9 @@ export class RecipeService {
     };
     return this.http.post(`${this.urlComments}.json`, obj);
   }
+  allComments() {
+    return this.http.get(`${this.urlComments}.json`)
+  }
 }
 
 //Object.keys(recipes).map((x)=> this.recipeService.patchPropertyId(x).subscribe())

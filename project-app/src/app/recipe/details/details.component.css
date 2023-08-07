@@ -154,4 +154,16 @@
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
+  .comments-view{
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    font-size: 2rem;
+    font-weight: 700;
+    width: 70%;
+    text-align: center;
+    color:#232061;
+    font-family: 'Franklin Gothic Medium';
+    font-style: italic;
+
+  }
   
