@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
   userData = new Observable();
+  isLoggedIn: boolean = false
 
   constructor(
     private angularFireAuth: AngularFireAuth,
@@ -30,10 +31,11 @@ export class UserService {
     this.angularFireAuth
       .signInWithEmailAndPassword(email, password)
       .then((res) => {
-        console.log('You are Successfully logged in!');
+        this.isLoggedIn = true;
+        alert('You are Successfully logged in!');
       })
       .catch((err) => {
-        console.log('Something is wrong:', err.message);
+        alert(err.message);
       });
   }
   signOutService(): void {
