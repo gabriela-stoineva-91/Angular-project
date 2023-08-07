@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SingInComponent } from './sing-in/sing-in.component';
 import { SingUpComponent } from './sing-up/sing-up.component';
 import { HomeComponent } from '../home/home.component';
+import { NotFoundComponent } from '../not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,7 @@ const routes: Routes = [
   {
     path: 'welcome',
     component: HomeComponent
-  }
+  },
 ];
 
 @NgModule({
