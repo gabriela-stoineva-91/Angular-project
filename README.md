@@ -4,7 +4,7 @@ This is an app for people who loves cooking!
 
 You can create recipe, edit it, view recipes catalog and see your own recipes!
 You can see details for all recipes in app, but you have to sing-in if you want to change something!
-And you can see and write comments, only you are logged!
+And you can see comments for recipe, but you can write comments, only if you are sing-in!
 
 Technical details:
 Front-end part ot this app is build with Angular.
