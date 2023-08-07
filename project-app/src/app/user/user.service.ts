@@ -8,20 +8,23 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
   userData = new Observable();
-  isLoggedIn: boolean = false
+  userId: string | undefined;
+  USER_KEY = 'user';
+  token: any;
 
   constructor(
     private angularFireAuth: AngularFireAuth,
     private router: Router
   ) {
-    this.userData = angularFireAuth.authState;
+    this.userId = '';
   }
   signUpService(email: string, password: string): any {
     this.angularFireAuth
       .createUserWithEmailAndPassword(email, password)
       .then((res: any) => {
         alert('You successfully sing up in FoodIdeas!');
-        this.router.navigate(['/welcome']);
+        this.router.navigate(['/sing-in']);
+        //this.userId = res.user?.uid;
       })
       .catch((error: any) => {
         alert(error.message);
@@ -31,7 +34,16 @@ export class UserService {
     this.angularFireAuth
       .signInWithEmailAndPassword(email, password)
       .then((res) => {
-        this.isLoggedIn = true;
+        console.log(res);
+
+        this.token = res.user?.refreshToken;
+        this.userId = res.user?.uid;
+        const obj = {
+          token: this.token,
+          userId: this.userId,
+        };
+
+        localStorage.setItem(this.USER_KEY, JSON.stringify(obj));
         alert('You are Successfully logged in!');
       })
       .catch((err) => {
@@ -40,5 +52,6 @@ export class UserService {
   }
   signOutService(): void {
     this.angularFireAuth.signOut();
+    localStorage.removeItem(this.USER_KEY);
   }
 }

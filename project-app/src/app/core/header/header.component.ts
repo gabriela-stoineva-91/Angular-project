@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { UserService } from 'src/app/user/user.service';
 
 @Component({
@@ -7,8 +7,14 @@ import { UserService } from 'src/app/user/user.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+
   constructor(private userService: UserService) {}
+  
   singOutHandler(): void {
-    this.userService.signOutService()
+    this.userService.signOutService();
   }
+  get isLogged(): boolean {
+    return (localStorage.getItem('user') !== null);
+  }
+
 }

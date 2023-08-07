@@ -18,7 +18,8 @@ export class RecipeService {
     category: string,
     products: string,
     preparation: string,
-    time: Number
+    time: string,
+    ownerId: string | undefined,
   ) {
     return this.http.post<Recipe>(`${this.urlRecipe}.json`, {
       name,

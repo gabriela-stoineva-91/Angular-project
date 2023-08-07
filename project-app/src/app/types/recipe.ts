@@ -6,4 +6,5 @@ export interface Recipe {
     preparation: string;
     time: string;
     recipeId: string | undefined;
+    ownerId: string;
 };
