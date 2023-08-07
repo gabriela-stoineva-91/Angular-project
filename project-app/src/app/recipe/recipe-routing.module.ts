@@ -4,6 +4,7 @@ import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { DetailsComponent } from './details/details.component';
 import { IdeasComponent } from './ideas/ideas.component';
+import { AccountComponent } from './account/account.component';
 
 const routes: Routes = [
   {
@@ -18,33 +19,17 @@ const routes: Routes = [
     path: 'recipes/edit/:recipeId',
     component: EditComponent,
   },
-  //   children: [
-  //     {
-  //       path: '',
-  //       pathMatch: 'full',
-  //       component: IdeasComponent,
-  //     },
-
-  //     {
-  //       path: ':recipeId',
-  //       children: [
-  //         {
-  //           path: '',
-  //           pathMatch: 'full',
-  //           component: DetailsComponent,
-  //         },
-  //         {
-  //           path: 'edit',
-  //           // redirectTo: EditComponent,
-  //           component: EditComponent,
-  //         },
-  //       ],
-  //     },
-  //   ],
-  // },
   {
     path: 'create',
     component: CreateComponent,
+  },
+  {
+    path: 'account',
+    component: AccountComponent,
+  },
+  {
+    path: 'account/:recipeId',
+    component: DetailsComponent,
   },
 ];
 

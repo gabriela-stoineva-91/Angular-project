@@ -12,6 +12,7 @@ import { IdeasComponent } from './ideas/ideas.component';
 import { RouterModule } from '@angular/router';
 import { UserService } from '../user/user.service';
 import { UserModule } from '../user/user.module';
+import { AccountComponent } from './account/account.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { UserModule } from '../user/user.module';
     DetailsComponent,
     EditComponent,
     IdeasComponent,
+    AccountComponent,
   ],
   imports: [
     CommonModule,

@@ -86,7 +86,7 @@ export class DetailsComponent implements OnInit {
     const id = this.activatedRoute.snapshot.params['recipeId'];
     this.recipeService.allComments().subscribe({
       next: (res) => {
-        this.comments = Object.values(res).filter((x) => x.recipeId = id).map((a)=> a.comment);
+        this.comments = Object.values(res).filter((x) => x.recipeId === id).map((a)=> a.comment);
         if (this.comments.length === 0) {
           this.isEmptyComment = true;
         }

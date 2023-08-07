@@ -1,0 +1,13 @@
+<h1>Here you can manage your recipes!</h1>
+<section id="account">
+  <div>
+    <div class="recipe-card" *ngFor="let recipe of myRecipes">
+      <img src="{{ recipe.imageUrl }}" alt="picture" />
+      <p class="title">{{ recipe.name }}</p>
+      <p class="date">{{ recipe.time }}</p>
+      <button type="button">
+        <a [routerLink]="[recipe.recipeId]" class="details-btn">Details</a>
+      </button>
+    </div>
+  </div>
+</section>
