@@ -59,10 +59,12 @@ export class DetailsComponent implements OnInit {
   }
 
   get isOwner(): boolean {
-    this.token = localStorage.getItem('user');
-    this.ownerId = JSON.parse(this.token).userId;
-    if (this.recipe?.ownerId === this.ownerId) {
-      return true;
+    if (this.isSingIn === true) {
+      this.token = localStorage.getItem('user');
+      this.ownerId = JSON.parse(this.token).userId;
+      if (this.recipe?.ownerId === this.ownerId) {
+        return true;
+      }
     }
     return false;
   }
@@ -70,25 +72,23 @@ export class DetailsComponent implements OnInit {
     if (form.invalid) {
       return;
     }
-    if (localStorage.getItem('user')) {
+    if (this.isSingIn === true) {
       const id = this.activatedRoute.snapshot.params['recipeId'];
       this.token = localStorage.getItem('user');
-      if (this.ownerId) {
-        this.ownerId = JSON.parse(this.token)?.userId;
+      this.ownerId = JSON.parse(this.token).userId;
 
-        const { comment } = form.value;
+      const { comment } = form.value;
 
-        this.recipeService.addComment(id, comment, this.ownerId).subscribe({
-          next: (res) => {
-            this.viewAllComments();
-            this.isEmptyComment = false;
-            form.reset();
-          },
-          error: (err) => {
-            alert(err.message);
-          },
-        });
-      }
+      this.recipeService.addComment(id, comment, this.ownerId).subscribe({
+        next: (res) => {
+          this.viewAllComments();
+          this.isEmptyComment = false;
+          form.reset();
+        },
+        error: (err) => {
+          alert(err.message);
+        },
+      });
     } else {
       alert('You need to sing in to comment this recipe!');
     }

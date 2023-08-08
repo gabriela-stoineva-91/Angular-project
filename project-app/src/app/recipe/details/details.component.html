@@ -25,19 +25,19 @@
       </div>
 
       <div class="comment-button">
-        <button type="submit"><a>Comment</a></button>
-        <button class="comment-button" (click)="viewAllComments()">
-          <a>All comments</a>
-        </button>  
+        <button type="submit">Comment</button>
+        <button class="comment-button" type="button"  (click)="viewAllComments()">
+          All comments
+        </button>
       </div>
-     
+
       <div class="action-buttons" *ngIf="isOwner">
         <button>
           <a [routerLink]="['../edit', recipe.recipeId]" id="edit-btn">Edit</a>
         </button>
         <button (click)="delete()"><a id="delete-btn">Delete</a></button>
       </div>
-      <div class="details-description" *ngIf="!isOwner">
+      <div class="details-description">
         <textarea
           class="details-description"
           name="comment"
@@ -54,7 +54,7 @@
   <div id="popup" *ngIf="isDeleteClicked">
     <div *ngIf="!isDeleted">
       <p>
-        Are you sure that you want to DELETE your recipe: {{ recipe.name }}?
+        Are you sure that you want to DELETE your recipe: "{{ recipe.name }}"?
       </p>
       <img src="../../../assets/popup.jpg" alt="image" />
       <button (click)="yes()"><a>Yes</a></button>
@@ -62,13 +62,13 @@
     </div>
     <p *ngIf="isDeleted">You successful deleted: {{ recipe.name }}!</p>
   </div>
-  <div>
+  <div *ngIf="!isDeleteClicked">
     <div class="comments-view">
       <div class="comments-view" *ngIf="isEmptyComment">
         <p class="comments-view">There are no comments yet!</p>
       </div>
       <p class="comments-view" *ngIf="!isEmptyComment">
-        All comments about this {{ recipe.name }} recipe you can see here:
+        All comments about this "{{ recipe.name }}" recipe you can see here:
       </p>
       <div class="comments-view" *ngFor="let comment of comments">
         <span>
