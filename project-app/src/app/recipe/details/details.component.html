@@ -24,10 +24,12 @@
         </span>
       </div>
 
-      <div class="comment-button" *ngIf="isSingIn">
-        <button *ngIf="!isOwner" type="submit"><a>Comment</a></button>
+      <div class="comment-button">
+        <button type="submit"><a>Comment</a></button>
       </div>
-     
+      <button class="comment-button" (click)="viewAllComments()">
+        <a>All comments</a>
+      </button>
 
       <div class="action-buttons" *ngIf="isOwner">
         <button>
@@ -47,44 +49,32 @@
           required
         ></textarea>
       </div>
-  
-     
-   
-   
     </div>
   </form>
-    <div id="popup" *ngIf="isDeleteClicked">
-      <div *ngIf="!isDeleted">
-        <p>
-          Are you sure that you want to DELETE your recipe: {{ recipe.name }}?
-        </p>
-        <img src="../../../assets/popup.jpg" alt="image" />
-        <button (click)="yes()"><a>Yes</a></button>
-        <button (click)="no()"><a>No</a></button>
-      </div>
-      <p *ngIf="isDeleted">You successful deleted: {{ recipe.name }}!</p>
+  <div id="popup" *ngIf="isDeleteClicked">
+    <div *ngIf="!isDeleted">
+      <p>
+        Are you sure that you want to DELETE your recipe: {{ recipe.name }}?
+      </p>
+      <img src="../../../assets/popup.jpg" alt="image" />
+      <button (click)="yes()"><a>Yes</a></button>
+      <button (click)="no()"><a>No</a></button>
     </div>
-    <div>
-      <button class="comment-button" type="button" (click)="viewAllComments()">
-        <a>All comments</a>
-      </button>
-      <div class="comments-view">
-      
-        <div class="comments-view" *ngIf="isEmptyComment">
-          <p class="comments-view">There are no comments yet!</p>
-          
-        </div>
-        <p class="comments-view" *ngIf="!isEmptyComment">
-          All comments about this {{ recipe.name }} recipe you can see here:
-        </p>
-        <div class="comments-view" *ngFor="let comment of comments">
-          <span>
-            {{ comment }}
-          </span>
-        </div>
+    <p *ngIf="isDeleted">You successful deleted: {{ recipe.name }}!</p>
+  </div>
+  <div>
+    <div class="comments-view">
+      <div class="comments-view" *ngIf="isEmptyComment">
+        <p class="comments-view">There are no comments yet!</p>
+      </div>
+      <p class="comments-view" *ngIf="!isEmptyComment">
+        All comments about this {{ recipe.name }} recipe you can see here:
+      </p>
+      <div class="comments-view" *ngFor="let comment of comments">
+        <span>
+          {{ comment }}
+        </span>
       </div>
     </div>
-  
-  
- 
+  </div>
 </section>

@@ -70,22 +70,27 @@ export class DetailsComponent implements OnInit {
     if (form.invalid) {
       return;
     }
-    const id = this.activatedRoute.snapshot.params['recipeId'];
-    this.token = localStorage.getItem('user');
-    if (this.ownerId) {
-      this.ownerId = JSON.parse(this.token)?.userId;
+    if (localStorage.getItem('user')) {
+      const id = this.activatedRoute.snapshot.params['recipeId'];
+      this.token = localStorage.getItem('user');
+      if (this.ownerId) {
+        this.ownerId = JSON.parse(this.token)?.userId;
 
-      const { comment } = form.value;
+        const { comment } = form.value;
 
-      this.recipeService.addComment(id, comment, this.ownerId).subscribe({
-        next: (res) => {
-          this.viewAllComments();
-          form.reset();
-        },
-        error: (err) => {
-          alert(err.message);
-        },
-      });
+        this.recipeService.addComment(id, comment, this.ownerId).subscribe({
+          next: (res) => {
+            this.viewAllComments();
+            this.isEmptyComment = false;
+            form.reset();
+          },
+          error: (err) => {
+            alert(err.message);
+          },
+        });
+      }
+    } else {
+      alert('You need to sing in to comment this recipe!');
     }
   }
   viewAllComments() {
