@@ -63,5 +63,3 @@ export class RecipeService {
     return this.http.get(`${this.urlComments}.json`)
   }
 }
-
-//Object.keys(recipes).map((x)=> this.recipeService.patchPropertyId(x).subscribe())

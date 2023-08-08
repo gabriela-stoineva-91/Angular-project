@@ -26,11 +26,11 @@
 
       <div class="comment-button">
         <button type="submit"><a>Comment</a></button>
+        <button class="comment-button" (click)="viewAllComments()">
+          <a>All comments</a>
+        </button>  
       </div>
-      <button class="comment-button" (click)="viewAllComments()">
-        <a>All comments</a>
-      </button>
-
+     
       <div class="action-buttons" *ngIf="isOwner">
         <button>
           <a [routerLink]="['../edit', recipe.recipeId]" id="edit-btn">Edit</a>

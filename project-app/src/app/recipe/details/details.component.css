@@ -101,7 +101,6 @@
   
   .action-buttons button{
     text-decoration: none;
-    margin: auto 50px;
     font-size: 21px;
     width: 180px;
     padding: 10px;
@@ -125,7 +124,6 @@
   }
   .comment-button button{
     text-decoration: none;
-    margin: auto 50px;
     font-size: 21px;
     width: 180px;
     padding: 10px;
@@ -137,7 +135,6 @@
 
   }
   .comment-button a{text-decoration: none;
-    margin: auto 50px;
     font-size: 21px;
     width: 130px;
     padding: 10px;
