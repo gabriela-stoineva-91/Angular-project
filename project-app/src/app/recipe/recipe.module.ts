@@ -13,6 +13,8 @@ import { RouterModule } from '@angular/router';
 import { UserService } from '../user/user.service';
 import { UserModule } from '../user/user.module';
 import { AccountComponent } from './account/account.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete'
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -22,6 +24,7 @@ import { AccountComponent } from './account/account.component';
     EditComponent,
     IdeasComponent,
     AccountComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -29,10 +32,15 @@ import { AccountComponent } from './account/account.component';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    UserModule
+    UserModule,
+    MatAutocompleteModule,
+    SearchComponent
   ],
   providers: [
     UserService
+  ],
+  exports: [
+    SearchComponent
   ]
 })
 export class RecipeModule { }

@@ -15,6 +15,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment.development';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SearchComponent } from './recipe/search/search.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    BrowserAnimationsModule,
   ],
   bootstrap: [AppComponent],
+  providers: [
+    SearchComponent,
+  ]
 })
 export class AppModule {}
