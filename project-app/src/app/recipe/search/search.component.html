@@ -1,11 +1,13 @@
 <form class="example-form">
-  <input
-    type="text"
-    placeholder="Insert your favorite product and take your idea ...."
-    [formControl]="control"
-    [matAutocomplete]="auto"
-    class="example-input"
-  />
+  <div id="example-input">
+    <input
+      type="text"
+      placeholder="Insert your favorite product and take your idea ...."
+      [formControl]="control"
+      [matAutocomplete]="auto"
+    />
+  </div>
+
   <mat-autocomplete #auto="matAutocomplete">
     <mat-option *ngFor="let recipe of filteredRecipes | async" [value]="recipe">
       <li>

@@ -11,3 +11,6 @@ a {
 a:hover {
     color: rgb(83, 125, 188);
 }
+p {
+  color: azure;
+}
