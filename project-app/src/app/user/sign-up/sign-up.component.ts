@@ -4,11 +4,11 @@ import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-sing-up',
-  templateUrl: './sing-up.component.html',
-  styleUrls: ['./sing-up.component.css'],
+  selector: 'app-sign-up',
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.css'],
 })
-export class SingUpComponent {
+export class SignUpComponent {
 
   constructor(
     private userService: UserService,

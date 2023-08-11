@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule} from "@angular/forms";
-import { SingInComponent } from './sing-in/sing-in.component';
-import { SingUpComponent } from './sing-up/sing-up.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 import { UserRoutingModule } from './user-routing.module';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 @NgModule({
   declarations: [
-    SingInComponent,
-    SingUpComponent,
+    SignInComponent,
+    SignUpComponent,
   ],
   imports: [
     CommonModule,

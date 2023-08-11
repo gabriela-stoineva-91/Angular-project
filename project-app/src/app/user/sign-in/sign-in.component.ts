@@ -4,14 +4,14 @@ import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-sing-in',
-  templateUrl: './sing-in.component.html',
-  styleUrls: ['./sing-in.component.css'],
+  selector: 'app-sign-in',
+  templateUrl: './sign-in.component.html',
+  styleUrls: ['./sign-in.component.css'],
 })
-export class SingInComponent {
+export class SignInComponent {
   constructor(private userService: UserService, private router: Router) {}
 
-  singInHandler(form: NgForm): void {
+  signInHandler(form: NgForm): void {
     if (form.invalid) {
       return;
     }

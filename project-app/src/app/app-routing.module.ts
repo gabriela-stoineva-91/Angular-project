@@ -12,6 +12,10 @@ const routes: Routes = [
     path: 'welcome',
     component: HomeComponent,
   },
+  // {
+  //   path: '**',
+  //   component: NotFoundComponent,
+  // }
 ];
 
 @NgModule({

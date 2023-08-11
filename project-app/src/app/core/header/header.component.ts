@@ -10,7 +10,7 @@ export class HeaderComponent {
 
   constructor(private userService: UserService) {}
   
-  singOutHandler(): void {
+  signOutHandler(): void {
     this.userService.signOutService();
   }
   get isLogged(): boolean {

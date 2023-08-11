@@ -17,11 +17,11 @@
       <div id="user" *ngIf="isLogged">
         <a routerLink="/account">My Recipes</a>
         <a routerLink="/create">Create Recipe</a>
-        <a routerLink="/welcome"(click)="singOutHandler()">Sing out</a>
+        <a routerLink="/welcome"(click)="signOutHandler()">Sign out</a>
       </div>
       <div id="guest"*ngIf="!isLogged">
-        <a routerLink="/sing-in">Sing in</a>
-        <a routerLink="/sing-up">Sing up</a>
+        <a routerLink="/sign-in">Sign in</a>
+        <a routerLink="/sign-up">Sign up</a>
       </div>
     </nav>
   </span>
