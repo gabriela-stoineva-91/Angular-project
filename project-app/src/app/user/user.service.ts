@@ -53,4 +53,12 @@ export class UserService {
     this.angularFireAuth.signOut();
     localStorage.removeItem(this.USER_KEY);
   }
+
+  isSignIn(): boolean {
+    if (!localStorage.getItem('user')) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 }

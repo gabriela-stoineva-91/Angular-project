@@ -15,6 +15,7 @@ import { UserModule } from '../user/user.module';
 import { AccountComponent } from './account/account.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete'
 import { SearchComponent } from './search/search.component';
+import { RouteGuardGuard } from '../user/route-guard.guard';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { SearchComponent } from './search/search.component';
     SearchComponent
   ],
   providers: [
-    UserService
+    UserService,
+    RouteGuardGuard
   ],
   exports: [
     SearchComponent

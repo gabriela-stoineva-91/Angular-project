@@ -50,7 +50,7 @@ export class DetailsComponent implements OnInit {
   no(): void {
     this.isDeleteClicked = false;
   }
-  get isSingIn(): boolean {
+  get isSignIn(): boolean {
     if (!localStorage.getItem('user')) {
       return false;
     } else {
@@ -59,7 +59,7 @@ export class DetailsComponent implements OnInit {
   }
 
   get isOwner(): boolean {
-    if (this.isSingIn === true) {
+    if (this.isSignIn === true) {
       this.token = localStorage.getItem('user');
       this.ownerId = JSON.parse(this.token).userId;
       if (this.recipe?.ownerId === this.ownerId) {
@@ -72,7 +72,7 @@ export class DetailsComponent implements OnInit {
     if (form.invalid) {
       return;
     }
-    if (this.isSingIn === true) {
+    if (this.isSignIn === true) {
       const id = this.activatedRoute.snapshot.params['recipeId'];
       this.token = localStorage.getItem('user');
       this.ownerId = JSON.parse(this.token).userId;
