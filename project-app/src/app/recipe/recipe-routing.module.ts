@@ -6,6 +6,7 @@ import { DetailsComponent } from './details/details.component';
 import { IdeasComponent } from './ideas/ideas.component';
 import { AccountComponent } from './account/account.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'account/:recipeId',
     component: DetailsComponent,
+  },
+  {
+    path: 'search',
+    component: SearchComponent
   },
   {
     path: '**',

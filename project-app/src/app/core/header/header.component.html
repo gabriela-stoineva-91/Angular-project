@@ -17,6 +17,7 @@
       <div id="user" *ngIf="isLogged">
         <a routerLink="/account">My Recipes</a>
         <a routerLink="/create">Create Recipe</a>
+        <a routerLink="/search">Search Recipe</a>
         <a routerLink="/welcome"(click)="signOutHandler()">Sign out</a>
       </div>
       <div id="guest"*ngIf="!isLogged">

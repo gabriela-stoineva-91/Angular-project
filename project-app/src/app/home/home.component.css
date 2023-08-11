@@ -14,3 +14,9 @@ a:hover {
 p {
   color: azure;
 }
+h1 {
+  color: azure;
+  font-family: sans-serif;
+  font-style: italic;
+
+}
