@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../recipe.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { RecipeService } from '../recipe.service';
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.css'],
 })
-export class AccountComponent implements OnInit, OnDestroy {
+export class AccountComponent implements OnInit {
   myRecipes: any[] = [];
   token: any;
   ownerId: any;
@@ -28,6 +28,4 @@ export class AccountComponent implements OnInit, OnDestroy {
       },
     });
   }
-  
-  ngOnDestroy(): void {}
 }

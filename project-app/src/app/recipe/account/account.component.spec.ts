@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { AccountComponent } from './account.component';
 
 describe('AccountComponent', () => {
@@ -8,7 +7,7 @@ describe('AccountComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AccountComponent]
+      declarations: [AccountComponent],
     });
     fixture = TestBed.createComponent(AccountComponent);
     component = fixture.componentInstance;

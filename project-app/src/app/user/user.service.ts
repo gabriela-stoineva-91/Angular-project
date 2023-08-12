@@ -22,9 +22,9 @@ export class UserService {
     this.angularFireAuth
       .createUserWithEmailAndPassword(email, password)
       .then((res: any) => {
-        alert('You successfully sing up in FoodIdeas!');
-        this.router.navigate(['/sing-in']);
-        //this.userId = res.user?.uid;
+        alert('You are Successfully sign up in FoodIdeas!');
+        this.router.navigate(['/sign-in']);
+       
       })
       .catch((error: any) => {
         alert(error.message);

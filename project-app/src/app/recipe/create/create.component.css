@@ -13,7 +13,11 @@
     text-align: center;
     border-radius: 10px;
     border: 1px solid;
-    box-shadow: 0 0 20px 0 rgba(68, 68, 68, 0.2), 0 5px 5px 0 rgba(94, 93, 93, 0.24);
+    box-shadow: 0 0 10px 0 rgba(68, 68, 68, 0.2), 0 5px 5px 0 rgba(94, 93, 93, 0.24);
+
+    border: solid 1px #a09138;
+    background-color: #eddcce94;
+    border-radius: 20px 0;
   }
   
   .form h2 {
@@ -48,7 +52,6 @@
     font-size: 20px;
     text-transform: uppercase;
     outline: 0;
-    background-color: #143f54;
     width: 100%;
     border: 0;
     padding: 15px;
@@ -57,6 +60,10 @@
     /* font-size: 14px; */
     cursor: pointer;
     border-radius: 5px;
+    background: #39afb3;
+    text-shadow: 1px 1px black;
+    padding: 0.5rem;
+    border-radius: 10px 0;
     
   }
   
@@ -68,7 +75,7 @@
   .form button:hover,
   .form button:active,
   .form button:focus {
-    background: #3e678a;
+    background: #a09138;
   }
   
   .container {
@@ -90,7 +97,7 @@
     font-size: 17px;
   }
   .form .message a {
-    color: #6688cb;
+    color: #a09138;
     text-decoration: none;
   }
   

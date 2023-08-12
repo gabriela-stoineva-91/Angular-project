@@ -1,5 +1,4 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../recipe.service';
 import { Recipe } from 'src/app/types/recipe';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -14,7 +13,6 @@ export class EditComponent implements OnInit {
   recipe: Recipe | undefined;
 
   constructor(
-    private formBuilder: FormBuilder,
     private recipeService: RecipeService,
     private activatedRoute: ActivatedRoute,
     private router: Router

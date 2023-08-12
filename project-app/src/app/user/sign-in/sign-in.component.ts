@@ -16,7 +16,6 @@ export class SignInComponent {
       return;
     }
     const { email, password } = form.value;
-    this.userService.signInService(email, password)
-    
+    this.userService.signInService(email, password);
   }
 }

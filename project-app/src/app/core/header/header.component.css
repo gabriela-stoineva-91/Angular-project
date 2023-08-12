@@ -1,35 +1,25 @@
-#logo {
-  float: inline-end;
-  image-rendering: 60px;
-  image-resolution: 1080px;
-}
-div {
-  display: block;
-  background-color: lightblue;
-  padding-top: 30px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-} 
-nav {
-  float: right;
-}
 
+div {
+  display: flex;
+  background-color: #eddcce94;
+  padding-right: 10px;
+  padding-left: 10px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid 1px #a09138;
+} 
+p {
+  font-weight: bold;
+}
 a {
-  font-size: 35px;
-  font-style: oblique;
-  font-family: "Lucida Sans";
-  text-shadow: 2px 2px #99a4a9;
-  text-align: justify;
-  text-decoration: dashed; 
-  margin-right: 30px;
+  font-size: 19px;
+  font-family: "Montsert", sans-serif;
+  font-weight: bold;
+  margin-left: 18px;
+  text-decoration: none;
+  color: #2f3e14;
  }
 
-img {
-  display: inline;
-}
-
 nav a:hover {
-  color: aliceblue;
-  font-size: 35px;
+  color: #a09138;
 }

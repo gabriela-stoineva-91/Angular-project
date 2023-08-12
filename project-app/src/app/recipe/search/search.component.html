@@ -15,7 +15,6 @@
       [matAutocomplete]="auto"
     />
   </div>
-
   <mat-autocomplete #auto="matAutocomplete">
     <mat-option *ngFor="let recipe of filteredRecipes | async" [value]="recipe">
       <li>

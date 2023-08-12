@@ -3,7 +3,7 @@
     <a routerLink="/welcome">
       <img
         id="logo"
-        src="../../assets/logo.png"
+        src="../../../assets/logo.png"
         alt="foodideas.png"
         height="90"
         width="160"
@@ -12,10 +12,10 @@
     <nav id="nav">
       <a routerLink="/welcome">Welcome</a>
       <a routerLink="/recipes">Recipes</a>
+      <a routerLink="/search">Search Recipe</a>
       <span id="user" *ngIf="isLogged">
         <a routerLink="/account">My Recipes</a>
         <a routerLink="/create">Create Recipe</a>
-        <a routerLink="/search">Search Recipe</a>
         <a routerLink="/welcome" (click)="signOutHandler()">Sign out</a>
       </span>
       <span id="guest" *ngIf="!isLogged">

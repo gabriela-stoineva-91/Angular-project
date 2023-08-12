@@ -1,15 +1,59 @@
-html {
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
+
+html, body { height: 100%; }
+body { 
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
     background-image: url('/assets/fresh-vegetables-fruits-and-nuts-royalty-free-image-943001868-1550249117.jpg');
-     background-size: cover;
-    
+    background-color: #f7f0e8;
+    height: 100%;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+*, *:before, *:after {
+    box-sizing: border-box;
 }
 
 html, body { height: 100%; margin: 0;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: #383b33;}
 
-app-root{
+app-footer p {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'PT Serif', serif;;
+    color: #a09138;
+}
+h5 {
+    font-family: 'PT Serif', serif;;
+    color: #a09138;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+
+app-root {
     height: 100%;
     display: grid;
-    grid-template-rows: 1fr auto 1fr;
-    
+    grid-template-rows: 140px auto 1fr;
+}
+
+app-home main > div {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    flex-direction: column;
+    height: 100%;
+}
+app-home main {
+    height: 100%;
+}
+
+footer {
+    background-color: #dcc8bd;
 }

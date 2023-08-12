@@ -83,7 +83,7 @@ export class DetailsComponent implements OnInit {
         next: (res) => {
           this.isEmptyComment = false;
           this.viewAllComments();
-          
+
           form.reset();
         },
         error: (err) => {

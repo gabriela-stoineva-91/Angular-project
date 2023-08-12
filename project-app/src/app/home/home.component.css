@@ -1,27 +1,20 @@
-.imageHome {
-  background-image: url("../../assets/fresh-vegetables-fruits-and-nuts-royalty-free-image-943001868-1550249117.jpg");
-  background-color: fit-content;
-}
-a {
-  color: azure;
-  font-size: 90px;
-  font-family: sans-serif;
-  font-style: italic;
-}
-a:hover {
-    color: rgb(83, 125, 188);
+h1 {
+  font-size: 50px;
 }
 p {
-  color: azure;
-  font-size: larger;
-  font-style: italic;
+  text-align: center;
+  font-size: 19px;
 }
-h1 {
-  color: azure;
-  font-family: sans-serif;
-  font-style: italic;
+a {
+  border: solid 3px #a09138;
+    padding: 1rem 2rem;
+    font-size: 30px;
+    color: #2f3e14;
+    text-decoration: none;
+    margin-top: 1rem;
 }
-div{
-    float:right
-  
+a:hover {
+  border: solid 3px #baa427;
+  background-color: #eddcce94;
+  color: #baa427;
 }

@@ -1,12 +1,10 @@
 #details-wrapper {
-    background-color: #dadafc;
-    margin: 50px auto;
-    height: 71%;
-    width: 90%;
-    border: 2px ridge rgb(210, 208, 208);
-    border-radius: 12px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
-    scale: 0.85;
+  flex: 0 1 45%;
+  border: solid 1px #a09138;
+  background-color: #eddcce94;
+  border-radius: 20px 0;
+  width: 80vw;
+  margin: 0 auto 0;
   }
   
   #details-wrapper img {
@@ -14,11 +12,10 @@
     margin: 20px auto;
     height: 250px;
     width: 300px;
+    object-fit: cover;
     border-radius: 12px;
     border: 1px solid black;
-    box-shadow: -4px 3px 25px 1px rgba(0,0,0,0.85);
-  -webkit-box-shadow: -4px 3px 25px 1px rgba(0,0,0,0.85);
-  -moz-box-shadow: -4px 3px 25px 1px rgba(0,0,0,0.85);
+    box-shadow: -4px 3px 25px 1px rgb(155 153 153 / 85%);
   }
   
   #details-title {
@@ -56,7 +53,7 @@
   
   p {
     text-align: center;
-    font-size: 18px;
+    /* font-size: 18px; */
   }
   
   span {
@@ -102,36 +99,37 @@
   .action-buttons button{
     text-decoration: none;
     font-size: 21px;
-    width: 180px;
-    padding: 10px;
+    width: 160px;
+    border-radius: 3px;
     text-align: center;
     color: white;
+    background: #39afb3;
     text-shadow: 1px 1px black;
-    background: rgb(125, 11, 246);
-    border-radius: 5px;
+    padding: 0.5rem;
+    border-radius: 10px 0;
+  }
+  .comment-button  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
   .action-buttons a{
     text-decoration: none;
-    margin: auto 50px;
-    font-size: 21px;
-    width: 130px;
-    padding: 10px;
-    text-align: center;
+   
     color: white;
-    text-shadow: 1px 1px black;
-    background: rgb(125, 11, 246);
-    border-radius: 5px;
+
   }
   .comment-button button{
     text-decoration: none;
     font-size: 21px;
-    width: 180px;
-    padding: 10px;
+    width: 160px;
+    border-radius: 3px;
     text-align: center;
     color: white;
+    background: #39afb3;
     text-shadow: 1px 1px black;
-    background: rgb(125, 11, 246);
-    border-radius: 5px;
+    padding: 0.5rem;
+    border-radius: 10px 0;
 
   }
   .comment-button a{text-decoration: none;
@@ -161,6 +159,13 @@
     color:#232061;
     font-family: 'Franklin Gothic Medium';
     font-style: italic;
+    margin-top: 1rem;
+    padding: .5rem;
+    border-bottom: solid 1px #dbdbdb;
+  }
 
+#sign {
+    color: #6688cb;
+    text-decoration: none;
   }
   

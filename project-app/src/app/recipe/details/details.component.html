@@ -3,16 +3,15 @@
     <div id="details-wrapper" *ngIf="!isDeleteClicked">
       <img id="details-img" src="{{ recipe.imageUrl }}" alt="image" />
       <p id="details-title">{{ recipe.name }}</p>
-      <p id="details-category">
-        Category: <span id="categories">{{ recipe.category }}</span>
-      </p>
+      <p class="details-description">Category: {{ recipe.category }}</p>
       <p id="details-date">
-        Time:<span id="date">{{ recipe.time }}</span>
+        You need <span id="date">{{ recipe.time }} min.</span>
       </p>
 
       <div id="info-wrapper">
         <div class="details-description">
           <span>
+            Ingredients: <br />
             {{ recipe.products }}
           </span>
         </div>
@@ -20,9 +19,14 @@
 
       <div class="details-description">
         <span>
+          Preparation: <br />
           {{ recipe.preparation }}
         </span>
       </div>
+       <div *ngIf="!isDeleteClicked">
+    <p *ngIf="!isSignIn">If you want to see comments? <a id="sign" routerLink="/sign-in">Sing in!</a></p>
+  
+  </div>
 
       <div class="action-buttons" *ngIf="isOwner">
         <button>
@@ -30,6 +34,7 @@
         </button>
         <button (click)="delete()"><a id="delete-btn">Delete</a></button>
       </div>
+
       <div class="details-description" *ngIf="isSignIn">
         <textarea
           class="details-description"
@@ -41,6 +46,30 @@
           #textAreaCommentInput="ngModel"
           required
         ></textarea>
+      </div>
+      <div class="comment-button" *ngIf="isSignIn">
+        <button type="submit">Comment</button>
+        <button
+          class="comment-button"
+          type="button"
+          (click)="viewAllComments()"
+        >
+          All comments
+        </button>
+      </div>
+      <div class="comments-view" *ngIf="isSignIn">
+    
+        <p class="comments-view">
+          Comments about "{{ recipe.name }}" recipe you can see here:
+        </p>
+        <p class="comments-view" *ngIf="isEmptyComment">
+          There are no comments yet!
+        </p>
+        <div class="comments-view" *ngFor="let comment of comments">
+          <span>
+            <p>{{ comment }}</p>
+          </span>
+        </div>
       </div>
     </div>
   </form>
@@ -55,30 +84,5 @@
     </div>
     <p *ngIf="isDeleted">You successful deleted: {{ recipe.name }}!</p>
   </div>
-  <div *ngIf="!isDeleteClicked">
-    <div class="comments-view" *ngIf="isSignIn">
-      <div class="comment-button">
-        <button type="submit">Comment</button>
-        <button
-          class="comment-button"
-          type="button"
-          (click)="viewAllComments()"
-        >
-          All comments
-        </button>
-      </div>
-
-      <p class="comments-view">
-        Comments about "{{ recipe.name }}" recipe you can see here:
-      </p>
-      <p class="comments-view" *ngIf="isEmptyComment">
-        There are no comments yet!
-      </p>
-      <div class="comments-view" *ngFor="let comment of comments">
-        <span>
-          <p>{{ comment }}</p>
-        </span>
-      </div>
-    </div>
-  </div>
+ 
 </section>
