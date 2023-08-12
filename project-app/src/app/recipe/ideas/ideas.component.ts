@@ -31,9 +31,5 @@ export class IdeasComponent implements OnInit, OnDestroy {
       },
     });
   }
-  ngOnDestroy(): void {
-    
-  }
-  
-  
+  ngOnDestroy(): void {}
 }

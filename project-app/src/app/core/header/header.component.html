@@ -1,8 +1,8 @@
 <header>
-  <span>
+  <div>
     <a routerLink="/welcome">
       <img
-        class="logo"
+        id="logo"
         src="../../assets/logo.png"
         alt="foodideas.png"
         height="90"
@@ -10,20 +10,18 @@
       />
     </a>
     <nav id="nav">
-      <h1>
-        <a routerLink="/welcome">Welcome</a>
-      </h1>
+      <a routerLink="/welcome">Welcome</a>
       <a routerLink="/recipes">Recipes</a>
-      <div id="user" *ngIf="isLogged">
+      <span id="user" *ngIf="isLogged">
         <a routerLink="/account">My Recipes</a>
         <a routerLink="/create">Create Recipe</a>
         <a routerLink="/search">Search Recipe</a>
-        <a routerLink="/welcome"(click)="signOutHandler()">Sign out</a>
-      </div>
-      <div id="guest"*ngIf="!isLogged">
+        <a routerLink="/welcome" (click)="signOutHandler()">Sign out</a>
+      </span>
+      <span id="guest" *ngIf="!isLogged">
         <a routerLink="/sign-in">Sign in</a>
         <a routerLink="/sign-up">Sign up</a>
-      </div>
+      </span>
     </nav>
-  </span>
+  </div>
 </header>
