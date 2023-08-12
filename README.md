@@ -38,8 +38,8 @@ gabito2023@abv.bg
 *Search button used parts ot Angular material.
 
 
-This FoodIdeas-App is saved in google-drive and is prepare to deploy in Firebase:
-Some views:
+This FoodIdeas-App is saved in google-drive and is prepare to deploy in Firebase.
+
 
 
 
