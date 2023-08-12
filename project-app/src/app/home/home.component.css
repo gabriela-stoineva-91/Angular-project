@@ -13,10 +13,15 @@ a:hover {
 }
 p {
   color: azure;
+  font-size: larger;
+  font-style: italic;
 }
 h1 {
   color: azure;
   font-family: sans-serif;
   font-style: italic;
-
+}
+div{
+    float:right
+  
 }
