@@ -46,7 +46,7 @@ export class UserService {
       })
       .catch((err) => {
         alert(err.message);
-        this.router.navigate(['/sing-in'])
+        this.router.navigate(['/sign-in'])
       });
   }
   signOutService(): void {

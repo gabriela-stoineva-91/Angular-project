@@ -81,8 +81,9 @@ export class DetailsComponent implements OnInit {
 
       this.recipeService.addComment(id, comment, this.ownerId).subscribe({
         next: (res) => {
-          this.viewAllComments();
           this.isEmptyComment = false;
+          this.viewAllComments();
+          
           form.reset();
         },
         error: (err) => {

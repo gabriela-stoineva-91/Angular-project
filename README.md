@@ -16,6 +16,13 @@ On the bottom of all recipes detail view will be active buttons to comment and a
 And for own recipes collection will be active buttons to edit and delete recipe!
 Of course he can search recipe!
 
+users:
+gabito01042012@abv.bg 
+9999999
+
+gabito2023@abv.bg
+1111111
+
 
 *Technical details:
 

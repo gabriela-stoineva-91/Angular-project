@@ -38,14 +38,19 @@ const routes: Routes = [
     canActivate: [RouteGuardGuard]
   },
   {
+    path: 'account/edit/:recipeId',
+    component: EditComponent,
+    canActivate: [RouteGuardGuard]
+  },
+  {
     path: 'search',
     component: SearchComponent
   },
-  {
-    path: '**',
-    pathMatch: 'full',
-    component: NotFoundComponent
-  }
+  // {
+  //   path: '**',
+  //   pathMatch: 'full',
+  //   component: NotFoundComponent
+  // }
 ];
 
 @NgModule({

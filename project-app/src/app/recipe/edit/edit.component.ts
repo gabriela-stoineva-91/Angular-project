@@ -38,7 +38,6 @@ export class EditComponent implements OnInit {
     if (form.invalid) {
       return;
     }
-
     this.recipeService.editRecipe(form.value, this.id).subscribe((res: any) => {
       this.router.navigate([`/recipes/${this.id}`]);
     });
