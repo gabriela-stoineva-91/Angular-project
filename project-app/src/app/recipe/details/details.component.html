@@ -24,14 +24,13 @@
         </span>
       </div>
 
-    
       <div class="action-buttons" *ngIf="isOwner">
         <button>
           <a [routerLink]="['../edit', recipe.recipeId]" id="edit-btn">Edit</a>
         </button>
         <button (click)="delete()"><a id="delete-btn">Delete</a></button>
       </div>
-      <div class="details-description"*ngIf="isSignIn">
+      <div class="details-description" *ngIf="isSignIn">
         <textarea
           class="details-description"
           name="comment"
@@ -78,7 +77,6 @@
       <div class="comments-view" *ngFor="let comment of comments">
         <span>
           <p>{{ comment }}</p>
-          
         </span>
       </div>
     </div>

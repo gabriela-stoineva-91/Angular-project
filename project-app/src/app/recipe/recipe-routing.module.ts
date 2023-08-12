@@ -46,11 +46,11 @@ const routes: Routes = [
     path: 'search',
     component: SearchComponent
   },
-  // {
-  //   path: '**',
-  //   pathMatch: 'full',
-  //   component: NotFoundComponent
-  // }
+  {
+    path: '**',
+    pathMatch: 'full',
+    component: NotFoundComponent
+  }
 ];
 
 @NgModule({
